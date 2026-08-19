@@ -16,7 +16,7 @@ export default function WorkbenchScene({ onDebugUpdate }) {
         shadows
         gl={{
           toneMapping: THREE.ACESFilmicToneMapping,
-          toneMappingExposure: 0.8,
+          toneMappingExposure: 1.0,
           outputColorSpace: THREE.SRGBColorSpace,
           antialias: true,
         }}
@@ -25,46 +25,46 @@ export default function WorkbenchScene({ onDebugUpdate }) {
         <color attach="background" args={['#050505']} />
 
         {/* ============================================================ */}
-        {/* REFINED LOW-KEY ARCHITECTURAL LIGHTING SETUP                */}
+        {/* WARM COZY EVENING DEVELOPER WORKSPACE LIGHTING              */}
         {/* ============================================================ */}
         
-        {/* 1. Muted Ambient Light (Prevents washed out surfaces, preserves deep contrast) */}
-        <ambientLight intensity={0.35} color="#DDE4ED" />
+        {/* 1. Gentle Ambient Light (Preserves natural wall, floor & curtain visibility) */}
+        <ambientLight intensity={0.75} color="#FFF8F0" />
 
-        {/* 2. Main Window Key Light (Reduced intensity to reveal form without glare) */}
+        {/* 2. Soft Evening Key Light (15-20% reduction from original to preserve depth) */}
         <directionalLight 
           position={[-20, 30, -5]} 
-          intensity={0.85} 
-          color="#F0F4F8"
+          intensity={1.15} 
+          color="#F5F8FC"
           castShadow
           shadow-bias={-0.0001}
           shadow-mapSize={[2048, 2048]}
         />
 
-        {/* 3. Subtle Desk Ambient Fill (Replaces bright cyan with natural muted tone) */}
+        {/* 3. Desk Warm Focal Glow (Soft warm evening light keeping desk as focal point) */}
         <pointLight 
           position={[0.0, 8.5, -8.5]} 
-          intensity={1.2} 
-          distance={12} 
-          color="#A6B84A" 
+          intensity={2.2} 
+          distance={15} 
+          color="#FFDDAA" 
           decay={2}
         />
 
-        {/* 4. Subtle Wall Accent Spot Light (Replaces bright magenta with warm architectural fill) */}
+        {/* 4. Warm Curtain & Background Accent Spotlight */}
         <spotLight 
           position={[-11.0, 14.0, -2.0]} 
           target-position={[-11.0, 8.0, -6.0]}
-          intensity={0.8} 
-          color="#D4AF37" 
+          intensity={1.8} 
+          color="#FFAA88" 
           angle={Math.PI / 3} 
-          penumbra={0.5}
+          penumbra={0.4}
         />
 
         {/* 5. Soft Front Fill Light */}
-        <directionalLight position={[15, 18, 20]} intensity={0.3} color="#D0D7DE" />
+        <directionalLight position={[15, 18, 20]} intensity={0.4} color="#E8EEF5" />
 
-        {/* 6. Subtle Rim Light (Preserves model silhouette against black background) */}
-        <directionalLight position={[25, 20, -15]} intensity={0.75} color="#C2D2E8" />
+        {/* 6. Gentle Silhouette Rim Light */}
+        <directionalLight position={[25, 20, -15]} intensity={0.5} color="#E2E8F0" />
 
         <Suspense fallback={null}>
           <RoomEnvironment doorHingeRef={doorHingeRef} />
