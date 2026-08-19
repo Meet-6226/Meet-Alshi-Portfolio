@@ -16,7 +16,7 @@ export default function ProjectsSection({ onOpenProject }) {
           </h2>
         </div>
         <p className="font-mono text-xs text-[#8A8A86] uppercase tracking-widest">
-          2024 — 2026 · SELECTED WORKS
+          4 FEATURED PROJECTS
         </p>
       </div>
 
@@ -31,7 +31,7 @@ export default function ProjectsSection({ onOpenProject }) {
             {/* Top Subtle Hover Accent Line */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-transparent group-hover:bg-[#A6B84A] transition-colors duration-300" />
 
-            {/* Top Row: [■ BUILD_001] & Category */}
+            {/* Top Row: BUILD_001 & Category */}
             <div className="flex justify-between items-center font-mono text-xs uppercase pb-4 border-b border-[#242424]">
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#B7F000] shrink-0" />
@@ -53,11 +53,16 @@ export default function ProjectsSection({ onOpenProject }) {
             {/* Bottom Row: Tech Tags & EXPLORE Action */}
             <div className="flex items-center justify-between font-mono text-xs pt-4 border-t border-[#242424]">
               <div className="flex gap-2 flex-wrap text-[#8A8A86]">
-                {project.techStack.map((tech, idx) => (
+                {project.techStack.slice(0, 3).map((tech, idx) => (
                   <span key={idx} className="bg-[#080808] border border-[#242424] px-2.5 py-0.5 rounded-[2px] text-[11px] text-[#8A8A86]">
                     {tech}
                   </span>
                 ))}
+                {project.techStack.length > 3 && (
+                  <span className="bg-[#080808] border border-[#242424] px-2.5 py-0.5 rounded-[2px] text-[11px] text-[#8A8A86]">
+                    +{project.techStack.length - 3}
+                  </span>
+                )}
               </div>
               <button 
                 type="button"

@@ -2,12 +2,10 @@ export default function CertificationsSection() {
   const honors = [
     {
       num: '01',
-      category: 'HACKATHON / PROJECT COMPETITION',
+      category: 'HACKATHON / PROJECT ACHIEVEMENT',
       project: 'AAYU-OPD',
       title: '1ST RUNNER-UP',
-      description: 'Outpatient department (OPD) management system awarded 1st Runner-Up in competition.',
-      issuer: 'Hackathon / Project Competition',
-      year: '2026',
+      description: 'Outpatient department management system focused on patient registration, doctor scheduling and digital prescriptions.',
     },
   ];
 
@@ -60,10 +58,9 @@ export default function CertificationsSection() {
               </p>
             </div>
 
-            {/* Right Column: Organization & Year */}
+            {/* Right Column: Organization */}
             <div className="lg:col-span-4 flex flex-row lg:flex-col items-center lg:items-end justify-between font-mono text-xs text-[#8A8A86] uppercase tracking-wider pt-4 lg:pt-0 border-t lg:border-t-0 border-[#242424] gap-2">
-              <span className="text-[#8A8A86] text-left lg:text-right font-medium">{item.issuer}</span>
-              <span className="font-bold text-[#F2F2F0] text-sm lg:text-base shrink-0">{item.year}</span>
+              <span className="text-[#8A8A86] text-left lg:text-right font-medium">PROJECT COMPETITION</span>
             </div>
           </div>
         ))}

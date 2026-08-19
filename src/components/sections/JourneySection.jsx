@@ -4,32 +4,24 @@ export default function JourneySection() {
       num: '01',
       year: '2024',
       label: 'MILESTONE // 01',
-      title: 'STARTED BUILDING FULL-STACK PRODUCTS',
-      description: 'Started exploring full-stack development and built Spendr, a financial platform combining budgeting, financial education, AI assistance and paper trading.',
+      title: 'STARTED BUILDING FOR THE WEB',
+      description: 'Started learning web development and building projects including Spendr, a financial literacy and AI paper trading platform.',
       active: false,
     },
     {
       num: '02',
       year: '2025',
       label: 'MILESTONE // 02',
-      title: 'REAL-TIME & FULL-STACK DEVELOPMENT',
-      description: 'Built projects including CampusCare, a real-time campus safety and emergency response system, and MediCare, an AI-powered hospital operations platform.',
+      title: 'FULL-STACK DEVELOPMENT & COMPETITION',
+      description: 'Built applications using React, Node.js, MongoDB and Firebase. Achieved 1st Runner-Up for AAYU-OPD and built CampusCare as a second-year examination project.',
       active: false,
     },
     {
       num: '03',
-      year: '2025',
-      label: 'MILESTONE // 03',
-      title: 'FULL-STACK DEVELOPER — HARI OM THALASSIC',
-      description: 'Worked as a Full Stack Developer and contributed to building a CRM system using the MERN stack as part of a 5-member team.',
-      active: false,
-    },
-    {
-      num: '04',
       year: '2026',
-      label: 'MILESTONE // 04',
-      title: 'SYSTEMS, AI & IMMERSIVE WEB',
-      description: 'Expanded into distributed systems, AI-assisted applications and immersive 3D web experiences through projects such as SearchX and my interactive 3D portfolio.',
+      label: 'MILESTONE // 03',
+      title: 'EXPLORING AI & IMMERSIVE SYSTEMS',
+      description: 'Working on AI-assisted applications, backend systems, and interactive 3D web experiences through my developer portfolio.',
       active: true,
     },
   ];
@@ -39,13 +31,16 @@ export default function JourneySection() {
       
       {/* Editorial Section Header */}
       <div className="mb-20">
-        <div className="inline-flex items-center gap-2 font-mono text-xs text-[#A6B84A] uppercase tracking-[0.25em] mb-4">
+        <div className="inline-flex items-center gap-2 font-mono text-xs text-[#A6B84A] uppercase tracking-[0.25em] mb-3 font-semibold">
           <span className="w-2 h-2 rounded-full bg-[#B7F000]" />
           <span>[ 04 // TIMELINE ]</span>
         </div>
-        <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#F2F2F0] tracking-tight uppercase">
+        <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#F2F2F0] tracking-tight uppercase mb-3">
           DEVELOPMENT JOURNEY
         </h2>
+        <p className="font-sans text-sm sm:text-base text-[#8A8A86]">
+          My practical learning progression as a CS student and developer.
+        </p>
       </div>
 
       {/* Clean Vertical Timeline Structure */}
@@ -58,7 +53,7 @@ export default function JourneySection() {
             <div key={m.num} className="relative flex flex-col sm:flex-row items-start gap-6 group">
               
               {/* Year Marker (Left Column) */}
-              <div className="sm:absolute sm:-left-32 sm:w-24 text-left sm:text-right font-mono text-2xl font-extrabold tracking-tight text-[#A6B84A] flex items-center sm:justify-end gap-3">
+              <div className="sm:absolute sm:-left-32 sm:w-24 text-left sm:text-right font-mono text-2xl font-extrabold tracking-tight text-[#A6B84A] flex items-center sm:justify-end gap-3 pt-1">
                 <span>{m.year}</span>
               </div>
 

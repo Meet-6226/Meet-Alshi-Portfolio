@@ -44,8 +44,8 @@ function App() {
       } else if (hash === '#campuscare') {
         setActiveProjectSlug('campuscare');
         setIsResumeView(false);
-      } else if (hash === '#banquet-management') {
-        setActiveProjectSlug('banquet-management');
+      } else if (hash === '#banquet-management' || hash === '#banquet-management-system') {
+        setActiveProjectSlug('banquet-management-system');
         setIsResumeView(false);
       } else {
         setIsResumeView(false);

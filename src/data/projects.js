@@ -2,171 +2,177 @@ export const PROJECTS = [
   {
     id: 'spendr',
     slug: 'spendr',
+    num: '01',
     buildId: 'BUILD_001',
-    sysId: 'SYS_001',
-    num: '001',
     name: 'SPENDR',
     category: 'FINTECH / AI',
-    year: '2025',
+    tagline: 'A financial platform designed for teenagers and beginner traders to improve financial literacy through budgeting, financial education, AI assistance and risk-free paper trading.',
+    techStack: ['React', 'Node.js', 'MongoDB', 'Firebase', 'MERN Stack'],
     role: 'FULL-STACK DEVELOPER',
-    team: 'TEAM PROJECT',
-    status: 'DEPLOYED',
-    tagline: 'Financial platform combining budgeting, financial education, AI assistance and paper trading.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Firebase'],
+    team: 'Sakshi, Chaitanya, Jeevan & Meet',
+    type: 'TEAM PROJECT',
+    year: '2025',
+    status: 'SHOWCASED',
     caseStudy: {
+      heroStatement: 'Learn. Experiment. Understand.',
+      whyHeader: 'WHY SPENDR?',
       overview: [
-        'Spendr is a comprehensive financial platform designed to make personal finance management intuitive, educational, and interactive.',
-        'The platform bridges traditional budgeting with real-time paper trading simulations and AI-assisted financial advice, allowing users to build financial literacy without real-world monetary risk.'
+        'Spendr is a financial platform designed for teenagers and beginner traders to build financial literacy through budgeting, financial education, AI assistance and risk-free paper trading.',
+        'Young users and beginner traders need practical financial education and a safe environment to understand financial decisions before risking real money.'
       ],
+      problem: 'Many young adults and beginner traders lack practical financial education and risk-free environments to practice budgeting, stock analysis, and portfolio management before risking real money.',
+      solution: 'Spendr combines intuitive budget tracking, interactive financial education games, an AI financial advisor, and real-time paper trading powered by a virtual coin-based reward system.',
       features: [
-        { name: 'BUDGET TRACKING', desc: 'Real-time income, expense logging, and category-wise spending analytics.' },
-        { name: 'GOAL TRACKING', desc: 'Automated savings milestones and visual target progress indicators.' },
-        { name: 'FINANCE GAME', desc: 'Interactive gamified financial literacy micro-lessons and knowledge quizzes.' },
-        { name: 'AI FINANCIAL ADVISOR', desc: 'Conversational portfolio insights and budget guidance powered by Gemini API.' },
-        { name: 'PAPER TRADING', desc: 'Risk-free simulated stock market order execution engine with virtual portfolio balances.' },
-        { name: 'COIN / REWARD STORE', desc: 'Gamified store allowing users to redeem points earned through financial learning.' }
+        { name: 'BUDGET TRACKING', desc: 'Personalized income and expense tracking for everyday financial planning.' },
+        { name: 'GOAL TRACKING', desc: 'Set and monitor short-term and long-term financial saving goals.' },
+        { name: 'FINANCIAL EDUCATION', desc: 'Learn financial concepts through an interactive, gamified education system.' },
+        { name: 'AI FINANCIAL ADVISOR', desc: 'AI-assisted financial guidance and stock-related insights with pros and cons.' },
+        { name: 'PAPER TRADING', desc: 'Practice stock market decisions using a simulated environment with virtual currency.' },
+        { name: 'REWARD SYSTEM', desc: 'Virtual coin-based rewards for engagement, learning, and education milestones.' }
+      ],
+      technology: [
+        { name: 'FRONTEND', desc: 'React for dynamic interfaces, interactive learning modules, and application workflows.' },
+        { name: 'BACKEND', desc: 'Node.js and Express REST APIs for server-side application logic and financial calculations.' },
+        { name: 'DATA & SERVICES', desc: 'MongoDB for user profiles and budgets; Firebase for authentication and real-time sync.' }
       ],
       contribution: [
-        'Architected the full-stack real-time paper trading order execution engine.',
-        'Developed backend API endpoints for user budget management and financial goal calculation.',
-        'Designed the responsive, dark high-contrast dashboard UI and telemetry displays.',
-        'Integrated Gemini API streaming responses for conversational financial guidance.'
+        { title: 'FULL-STACK DEVELOPMENT', desc: 'Built application features across the React frontend and Node.js/MongoDB backend.' },
+        { title: 'CORE FEATURES', desc: 'Implemented budgeting and goal-management workflows.' },
+        { title: 'INTEGRATION', desc: 'Worked with Sakshi, Chaitanya and Jeevan on integrating application services, testing, and overall product functionality.' }
       ],
-      architecture: [
-        { title: 'FRONTEND', desc: 'React SPA with Tailwind CSS, custom state hooks, and low-latency chart rendering.' },
-        { title: 'BACKEND', desc: 'Node.js & Express REST API handling auth, transaction ledgers, and order validation.' },
-        { title: 'DATABASE', desc: 'MongoDB for user profiles and transaction history + Firebase Realtime DB for live feeds.' }
-      ],
-      challenges: [
-        { title: 'State Synchronization', desc: 'Preventing race conditions during rapid simulated trading orders by implementing optimistic UI updates with backend ledger checks.' },
-        { title: 'AI Contextual Guidance', desc: 'Structuring user financial data into secure, privacy-preserving prompts for real-time AI advice.' }
-      ],
-      outcome: 'Successfully delivered an integrated financial ecosystem combining budgeting, gamified learning, and paper trading into a unified web application.'
+      outcomeTitle: 'SHOWCASED AT ITM SKILLS UNIVERSITY',
+      outcome: 'Spendr was showcased during the ITM Skills University Pre-Evolution Round and was later selected for showcase during the junior-batch inauguration.'
     }
   },
   {
     id: 'aayu-opd',
     slug: 'aayu-opd',
+    num: '02',
     buildId: 'BUILD_002',
-    sysId: 'SYS_002',
-    num: '002',
     name: 'AAYU-OPD',
     category: 'HEALTHTECH / OPD',
-    year: '2025',
+    tagline: 'An outpatient department management system designed to streamline patient registration, doctor scheduling and digital prescription workflows.',
+    techStack: ['React', 'Node.js', 'Express', 'MongoDB'],
     role: 'FULL-STACK DEVELOPER',
-    team: 'HEALTH TECH COLLABORATION',
-    status: 'DEPLOYED',
-    tagline: 'Outpatient department (OPD) management system for streamlining patient registration, doctor scheduling, and digital prescription workflows.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Express'],
+    team: 'Development Team',
+    type: 'COMPETITION PROJECT',
+    year: '2025',
+    status: '1ST RUNNER-UP',
     caseStudy: {
+      heroStatement: 'Digitize. Schedule. Prescribe.',
+      whyHeader: 'WHY AAYU-OPD?',
       overview: [
-        'AAYU-OPD is a specialized healthcare management platform built to digitize and automate daily outpatient operations in clinics and hospitals.',
-        'The system eliminates paper queues by providing real-time patient registration, doctor consultation scheduling, and digital medical records access.'
+        'AAYU-OPD is an outpatient department management system designed to streamline patient registration, doctor scheduling and digital prescription workflows.',
+        'Outpatient departments often experience bottlenecked reception queues and uncoordinated appointment scheduling without digital record coordination.'
       ],
+      problem: 'Traditional outpatient departments face queue bottlenecks, manual record handling, and uncoordinated appointment scheduling for patients and doctors.',
+      solution: 'AAYU-OPD digitizes patient registration, structures doctor availability timetables, and provides a unified interface for issuing and storing digital prescriptions.',
       features: [
-        { name: 'PATIENT REGISTRATION', desc: 'Digital patient onboarding, demographics recording, and medical history logging.' },
-        { name: 'QUEUE & CONSULTATION DISPATCH', desc: 'Real-time outpatient queue tracking and doctor availability board.' },
-        { name: 'ELECTRONIC PRESCRIPTIONS', desc: 'Digital prescription generator with standardized medication templates.' },
-        { name: 'MEDICAL RECORDS ARCHIVE', desc: 'Centralized record storage allowing doctors instant access to past consultation notes.' }
+        { name: 'PATIENT REGISTRATION', desc: 'Digital onboarding and patient profile management.' },
+        { name: 'DOCTOR SCHEDULING', desc: 'Timetable coordination and appointment booking workflow.' },
+        { name: 'DIGITAL PRESCRIPTIONS', desc: 'Structured prescription generation and medical history access.' },
+        { name: 'OPD WORKFLOW', desc: 'Centralized queue management for outpatient reception desks.' }
+      ],
+      technology: [
+        { name: 'FRONTEND', desc: 'React for responsive dashboard interfaces and doctor/patient workflows.' },
+        { name: 'BACKEND', desc: 'Node.js and Express REST APIs for appointment and prescription routing.' },
+        { name: 'DATA & SERVICES', desc: 'MongoDB for patient records and doctor availability schedules.' }
       ],
       contribution: [
-        'Designed and implemented Express.js REST API routes for patient registration and doctor queue management.',
-        'Built responsive React dashboard components for clinic receptionists and attending physicians.',
-        'Optimized database queries for fast patient record retrieval during peak morning consultation hours.'
+        { title: 'FULL-STACK DEVELOPMENT', desc: 'Contributed as a Full-Stack Developer on the core Web UI and REST API routes.' },
+        { title: 'CORE FEATURES', desc: 'Built key patient registration and appointment scheduling workflows.' },
+        { title: 'WORKFLOW INTEGRATION', desc: 'Structured digital prescription templates and doctor schedule models.' }
       ],
-      architecture: [
-        { title: 'CLIENT LAYER', desc: 'React.js interface tailored for fast data entry by hospital staff.' },
-        { title: 'SERVER LAYER', desc: 'Express.js backend enforcing role-based access control (Doctor, Receptionist, Admin).' },
-        { title: 'STORAGE', desc: 'MongoDB indexed collections for patient records and doctor consultation logs.' }
-      ],
-      challenges: [
-        { title: 'Queue Concurrency', desc: 'Managing simultaneous patient check-ins without duplicate token generation by implementing atomic counter increments.' }
-      ],
-      outcome: 'Streamlined OPD administration, reducing patient registration bottlenecks and digitizing prescription records.'
+      outcomeTitle: '1ST RUNNER-UP',
+      outcome: 'Awarded 1st Runner-Up in project competition for OPD workflow optimization.'
     }
   },
   {
     id: 'campuscare',
     slug: 'campuscare',
+    num: '03',
     buildId: 'BUILD_003',
-    sysId: 'SYS_003',
-    num: '003',
     name: 'CAMPUSCARE',
     category: 'REAL-TIME / SAFETY',
-    year: '2025',
-    role: 'FULL-STACK ENGINEER',
-    team: 'SAFETY TECH PROJECT',
-    status: 'DEPLOYED',
     tagline: 'Real-time campus safety and emergency response platform.',
-    techStack: ['HTML', 'CSS', 'JavaScript', 'Firebase', 'Firestore', 'Cloud Functions', 'FCM', 'Firebase Authentication'],
+    techStack: ['HTML', 'CSS', 'JavaScript', 'Firebase', 'Cloud Firestore', 'FCM', 'Firebase Auth'],
+    role: 'DEVELOPER',
+    team: 'Academic Project',
+    type: 'EXAMINATION PROJECT',
+    year: '2025',
+    status: 'COMPLETED',
     caseStudy: {
+      heroStatement: 'Alert. Coordinate. Protect.',
+      whyHeader: 'WHY CAMPUSCARE?',
       overview: [
-        'CampusCare is a real-time safety and emergency dispatch system designed to protect students and staff across university campuses.',
-        'In critical situations, users can trigger instantaneous SOS alerts that pinpoint location data and dispatch real-time notifications to campus security officers.'
+        'CampusCare is a real-time campus safety alert and emergency response platform designed to help students report emergencies instantly and enable campus authorities to manage incidents.',
+        'Developed as a second-year examination project to demonstrate real-time incident notification and coordinate dispatch.'
       ],
+      problem: 'On large academic campuses, delayed emergency reporting and lack of real-time location sharing during incidents slow down security response times.',
+      solution: 'CampusCare provides instant SOS triggers for students with location sharing and real-time emergency dashboard monitoring for campus authorities.',
       features: [
-        { name: 'SOS ALERTS', desc: 'One-tap emergency trigger dispatching location data to campus security.' },
-        { name: 'REAL-TIME ADMIN DASHBOARD', desc: 'Live command console displaying active emergency incidents on an interactive map.' },
-        { name: 'PUSH NOTIFICATIONS', desc: 'Broadcasting high-priority safety alerts via Firebase Cloud Messaging (FCM).' },
-        { name: 'ROLE-BASED ACCESS', desc: 'Granular permissions differentiating student apps, security responder feeds, and admin command.' },
-        { name: 'LOCATION TRACKING', desc: 'GPS coordinate attachment during emergency SOS trigger events.' },
-        { name: 'INCIDENT MANAGEMENT', desc: 'Lifecycle incident tracking from initial distress trigger to resolution verification.' }
+        { name: 'INSTANT SOS ALERTS', desc: 'One-touch emergency alert trigger for students.' },
+        { name: 'REAL-TIME DASHBOARD', desc: 'Live incident monitoring map for campus security admins.' },
+        { name: 'PUSH NOTIFICATIONS', desc: 'Firebase Cloud Messaging (FCM) alerts sent to response teams.' },
+        { name: 'ROLE-BASED ACCESS', desc: 'Dedicated Student and Admin/Authority interfaces.' },
+        { name: 'LOCATION TRACKING', desc: 'Coordinate sharing during active SOS dispatch.' },
+        { name: 'INCIDENT MANAGEMENT', desc: 'Status tracking from alert trigger to resolution.' }
+      ],
+      technology: [
+        { name: 'FRONTEND', desc: 'HTML, CSS, and Vanilla JavaScript for fast client-side loading.' },
+        { name: 'BACKEND SERVICES', desc: 'Firebase Authentication, Cloud Functions, and FCM.' },
+        { name: 'DATA & SERVICES', desc: 'Cloud Firestore for real-time alert synchronization.' }
       ],
       contribution: [
-        'Integrated Firebase Cloud Firestore real-time listeners for instant incident updates on the security dashboard.',
-        'Configured Firebase Cloud Messaging (FCM) push notification triggers via Cloud Functions.',
-        'Developed role-based authentication rules using Firebase Auth.'
+        { title: 'APPLICATION ARCHITECTURE', desc: 'Designed and developed the application for a second-year examination project requirement.' },
+        { title: 'FIREBASE SERVICES', desc: 'Implemented Firebase Auth, Cloud Functions, and FCM push notifications.' },
+        { title: 'REAL-TIME DISPATCH', desc: 'Built Firestore real-time listeners for instant SOS alert updates.' }
       ],
-      architecture: [
-        { title: 'FRONTEND', desc: 'Lightweight HTML5/CSS3/JavaScript interface for maximum mobile compatibility and instant load times.' },
-        { title: 'BACKEND & DATABASE', desc: 'Firebase Cloud Functions triggered by Firestore document events for zero-server-maintenance scale.' },
-        { title: 'NOTIFICATIONS', desc: 'FCM push notification infrastructure delivering emergency alerts.' }
-      ],
-      challenges: [
-        { title: 'Sub-Second Dispatch Latency', desc: 'Ensuring emergency alerts reach security personnel instantly by leveraging Cloud Firestore snapshot listeners.' }
-      ],
-      outcome: 'Built a reliable emergency alert platform capable of immediate distress dispatch and live incident monitoring.'
+      outcomeTitle: 'SECOND-YEAR EXAMINATION PROJECT',
+      outcome: 'Successfully delivered as a second-year examination project demonstrating real-time emergency response system architecture.'
     }
   },
   {
-    id: 'banquet-management',
-    slug: 'banquet-management',
+    id: 'banquet-management-system',
+    slug: 'banquet-management-system',
+    num: '04',
     buildId: 'BUILD_004',
-    sysId: 'SYS_004',
-    num: '004',
     name: 'BANQUET MANAGEMENT SYSTEM',
     category: 'MANAGEMENT / FULL-STACK',
-    year: '2024',
-    role: 'FULL-STACK DEVELOPER',
-    team: 'ENTERPRISE SOFTWARE',
-    status: 'DEPLOYED',
-    tagline: 'Full-stack banquet hall booking, event scheduling, catering coordination, and billing management platform.',
+    tagline: 'Full-stack banquet hall management platform for booking, event scheduling, catering coordination and billing management.',
     techStack: ['React', 'Node.js', 'Express', 'MongoDB'],
+    role: 'FULL-STACK DEVELOPER',
+    team: 'Independent Project',
+    type: 'FULL-STACK WEB APP',
+    year: '2025',
+    status: 'COMPLETED',
     caseStudy: {
+      heroStatement: 'Reserve. Schedule. Manage.',
+      whyHeader: 'WHY BANQUET MANAGEMENT?',
       overview: [
-        'The Banquet Management System is an end-to-end operational platform designed for venue managers and event coordinators.',
-        'It automates venue availability checking, event package customization, catering logistics, and customer billing generation into a single management console.'
+        'Full-stack banquet hall management platform for managing banquet hall bookings, event scheduling, catering coordination and billing management.',
+        'Banquet and venue operators frequently struggle with booking conflicts, manual event scheduling, and disconnected catering/billing calculations.'
       ],
+      problem: 'Banquet and venue operators face scheduling conflicts, manual reservation tracking, and uncoordinated catering logistics.',
+      solution: 'A unified management dashboard consolidating hall availability calendars, catering packages, event timetables, and automated billing summaries.',
       features: [
-        { name: 'VENUE BOOKING CALENDAR', desc: 'Interactive scheduling grid preventing double-booking across venue halls.' },
-        { name: 'CATERING & MENU MANAGEMENT', desc: 'Customizable food package calculator based on guest headcount.' },
-        { name: 'BILLING & INVOICE GENERATOR', desc: 'Automated tax calculations, advance payment tracking, and itemized billing.' },
-        { name: 'STAFF & RESOURCE SCHEDULING', desc: 'Event checklist allocation and banquet floor staff assignment.' }
+        { name: 'BANQUET HALL BOOKING', desc: 'Venue reservation and availability schedule management.' },
+        { name: 'EVENT SCHEDULING', desc: 'Timetable coordination for upcoming events and functions.' },
+        { name: 'CATERING COORDINATION', desc: 'Menu package selection and catering logistics management.' },
+        { name: 'BILLING MANAGEMENT', desc: 'Invoice generation and event expense calculation.' }
+      ],
+      technology: [
+        { name: 'FRONTEND', desc: 'React for management dashboard UI and booking forms.' },
+        { name: 'BACKEND', desc: 'Node.js and Express REST APIs for booking and schedule management.' },
+        { name: 'DATA & SERVICES', desc: 'MongoDB for booking schedules, event details, and billing records.' }
       ],
       contribution: [
-        'Developed backend REST APIs for booking reservations, availability checks, and billing processing.',
-        'Created the interactive React booking calendar UI.',
-        'Implemented MongoDB schema validation for complex banquet event packages.'
+        { title: 'FULL-STACK DEVELOPMENT', desc: 'Built full-stack React components and Express/MongoDB backend models.' },
+        { title: 'BOOKING LOGIC', desc: 'Implemented venue booking availability checks and scheduling routines.' },
+        { title: 'BILLING WORKFLOWS', desc: 'Developed invoice generation and event expense calculation features.' }
       ],
-      architecture: [
-        { title: 'FRONTEND', desc: 'React SPA providing venue managers with calendar and billing tools.' },
-        { title: 'SERVER', desc: 'Node.js & Express API enforcing booking conflict checks and pricing calculations.' },
-        { title: 'DATA STORE', desc: 'MongoDB collections storing customer reservations, venue configurations, and invoices.' }
-      ],
-      challenges: [
-        { title: 'Double-Booking Prevention', desc: 'Creating reservation locking mechanisms during checkout to ensure venue dates remain mutually exclusive.' }
-      ],
-      outcome: 'Digitized venue management workflows, eliminating manual paper scheduling and automating invoice calculations.'
+      outcomeTitle: 'FULL-STACK MANAGEMENT PLATFORM',
+      outcome: 'Completed full-stack management web application streamlining banquet venue operations.'
     }
   }
 ];
