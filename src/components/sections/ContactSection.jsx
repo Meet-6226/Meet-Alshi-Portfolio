@@ -1,4 +1,9 @@
+import { useState } from 'react';
+import ContactModal from '../contact/ContactModal';
+
 export default function ContactSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const socialLinks = [
     { name: 'LINKEDIN', url: 'https://www.linkedin.com/in/meet-alshi/' },
     { name: 'GITHUB', url: 'https://github.com/Meet-6226' },
@@ -27,20 +32,21 @@ export default function ContactSection() {
               SOMETHING.
             </h2>
             <p className="font-sans text-[#8A8A86] text-base sm:text-lg max-w-xl leading-relaxed">
-              Open for full-stack engineering roles, technical architecture projects, and high-impact software collaborations.
+              Open to software engineering internships, full-stack opportunities, and collaborations where I can build meaningful digital products.
             </p>
           </div>
 
           {/* Action Buttons */}
           <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 w-full">
-            <a
-              href="mailto:meetalshi@gmail.com"
-              className="px-8 py-4 bg-[#A6B84A] text-[#050505] font-mono text-xs font-bold uppercase tracking-widest rounded-[2px] hover:bg-[#B7F000] transition-all text-center shadow-lg"
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-4 bg-[#A6B84A] text-[#050505] font-mono text-xs font-bold uppercase tracking-widest rounded-[2px] hover:bg-[#B7F000] hover:-translate-y-0.5 transition-all text-center shadow-lg"
             >
               GET IN TOUCH →
-            </a>
+            </button>
             <a
-              href="#resume"
+              href="#/resume"
               className="px-8 py-4 bg-[#080808] border border-[#242424] text-[#F2F2F0] font-mono text-xs font-semibold uppercase tracking-widest rounded-[2px] hover:bg-[#A6B84A] hover:text-[#050505] hover:border-[#A6B84A] transition-all text-center"
             >
               DOWNLOAD RESUME
@@ -101,6 +107,9 @@ export default function ContactSection() {
           </a>
         </div>
       </div>
+
+      {/* Contact Form Modal Overlay */}
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
     </section>
   );

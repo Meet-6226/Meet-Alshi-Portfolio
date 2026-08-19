@@ -59,8 +59,8 @@ export function Navbar({ brandRef, onNavigateSection }) {
           ))}
           
           <a
-            href="#resume"
-            onClick={(e) => handleLinkClick(e, '#contact')}
+            href="#/resume"
+            onClick={(e) => handleLinkClick(e, 'resume')}
             className="text-xs font-mono px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-[2px] bg-[#080808] text-[#F2F2F0] border border-[#242424] hover:border-[#A6B84A] hover:text-[#A6B84A] transition-all uppercase tracking-wider font-semibold shadow-sm"
           >
             Resume

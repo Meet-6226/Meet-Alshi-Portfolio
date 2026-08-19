@@ -6,32 +6,50 @@ import CertificationsSection from './components/sections/CertificationsSection';
 import JourneySection from './components/sections/JourneySection';
 import ContactSection from './components/sections/ContactSection';
 import ProjectCaseStudy from './components/projects/ProjectCaseStudy';
+import ResumeViewerPage from './components/resume/ResumeViewerPage';
 import { Navbar } from './components/layout/Navbar';
 import SmoothScroll from './components/layout/SmoothScroll';
 
 function App() {
   const [activeProjectSlug, setActiveProjectSlug] = useState(null);
+  const [isResumeView, setIsResumeView] = useState(false);
 
-  // Sync Hash & Route Location (Supports /projects/spendr, #projects/spendr, #spendr, etc.)
+  // Sync Hash & Route Location (Supports /projects/spendr, /resume, #resume, etc.)
   useEffect(() => {
     const handleLocationChange = () => {
       const hash = window.location.hash;
       const path = window.location.pathname;
 
-      if (path.startsWith('/projects/')) {
+      if (path === '/resume' || hash === '#resume' || hash === '#/resume') {
+        setIsResumeView(true);
+        setActiveProjectSlug(null);
+      } else if (path.startsWith('/projects/')) {
         const slug = path.replace('/projects/', '');
-        if (slug) setActiveProjectSlug(slug);
+        if (slug) {
+          setActiveProjectSlug(slug);
+          setIsResumeView(false);
+        }
       } else if (hash.includes('/projects/')) {
         const slug = hash.split('/projects/')[1];
-        if (slug) setActiveProjectSlug(slug);
+        if (slug) {
+          setActiveProjectSlug(slug);
+          setIsResumeView(false);
+        }
       } else if (hash === '#spendr') {
         setActiveProjectSlug('spendr');
+        setIsResumeView(false);
       } else if (hash === '#aayu-opd') {
         setActiveProjectSlug('aayu-opd');
+        setIsResumeView(false);
       } else if (hash === '#campuscare') {
         setActiveProjectSlug('campuscare');
+        setIsResumeView(false);
       } else if (hash === '#banquet-management') {
         setActiveProjectSlug('banquet-management');
+        setIsResumeView(false);
+      } else {
+        setIsResumeView(false);
+        setActiveProjectSlug(null);
       }
     };
 
@@ -46,11 +64,13 @@ function App() {
   }, []);
 
   const openProject = (slug) => {
+    setIsResumeView(false);
     setActiveProjectSlug(slug);
     window.history.pushState(null, '', `#/projects/${slug}`);
   };
 
   const closeProject = () => {
+    setIsResumeView(false);
     setActiveProjectSlug(null);
     window.history.pushState(null, '', '#projects');
     setTimeout(() => {
@@ -60,6 +80,7 @@ function App() {
   };
 
   const handleSectionNavigation = (sectionId) => {
+    setIsResumeView(false);
     setActiveProjectSlug(null);
     window.history.pushState(null, '', sectionId ? `#${sectionId}` : '#');
     setTimeout(() => {
@@ -74,13 +95,15 @@ function App() {
 
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-[#050505] text-[#F2F2F2] font-sans antialiased selection:bg-[#A3FF00] selection:text-[#050505] overflow-x-hidden">
+      <div className="relative min-h-screen bg-[#050505] text-[#F2F2F0] font-sans antialiased selection:bg-[#A6B84A] selection:text-[#050505] overflow-x-hidden">
         
-        {/* Global Fixed Top Navbar (Present across both Main Portfolio & Project Case Study pages) */}
+        {/* Global Fixed Top Navbar (Present across Main Portfolio, Case Studies, and Resume Viewer) */}
         <Navbar onNavigateSection={handleSectionNavigation} />
 
-        {/* Dynamic View: Project Case Study or Main Portfolio */}
-        {activeProjectSlug ? (
+        {/* Dynamic View Rendering */}
+        {isResumeView ? (
+          <ResumeViewerPage />
+        ) : activeProjectSlug ? (
           <ProjectCaseStudy 
             projectSlug={activeProjectSlug} 
             onClose={closeProject} 
@@ -97,7 +120,7 @@ function App() {
             {/* 3. Projects Archive Section */}
             <ProjectsSection onOpenProject={openProject} />
 
-            {/* 4. Honors & Certifications Recognition Ledger */}
+            {/* 4. Honors & Achievements Recognition Ledger */}
             <CertificationsSection />
 
             {/* 5. Development Journey Section */}

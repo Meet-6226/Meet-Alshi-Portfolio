@@ -1,8 +1,37 @@
 export default function JourneySection() {
   const milestones = [
-    { year: '2024', role: 'FULL-STACK DEVELOPER', focus: 'Built Spendr financial budgeting & AI paper trading platform.', active: false },
-    { year: '2025', role: 'SYSTEMS & REAL-TIME SPECIALIST', focus: 'Engineered CampusCare emergency response & MediCare predictive staffing.', active: false },
-    { year: '2026', role: 'DISTRIBUTED SYSTEMS ARCHITECT', focus: 'Designed SearchX distributed inverted-index engine & modern 3D web applications.', active: true },
+    {
+      num: '01',
+      year: '2024',
+      label: 'MILESTONE // 01',
+      title: 'STARTED BUILDING FULL-STACK PRODUCTS',
+      description: 'Started exploring full-stack development and built Spendr, a financial platform combining budgeting, financial education, AI assistance and paper trading.',
+      active: false,
+    },
+    {
+      num: '02',
+      year: '2025',
+      label: 'MILESTONE // 02',
+      title: 'REAL-TIME & FULL-STACK DEVELOPMENT',
+      description: 'Built projects including CampusCare, a real-time campus safety and emergency response system, and MediCare, an AI-powered hospital operations platform.',
+      active: false,
+    },
+    {
+      num: '03',
+      year: '2025',
+      label: 'MILESTONE // 03',
+      title: 'FULL-STACK DEVELOPER — HARI OM THALASSIC',
+      description: 'Worked as a Full Stack Developer and contributed to building a CRM system using the MERN stack as part of a 5-member team.',
+      active: false,
+    },
+    {
+      num: '04',
+      year: '2026',
+      label: 'MILESTONE // 04',
+      title: 'SYSTEMS, AI & IMMERSIVE WEB',
+      description: 'Expanded into distributed systems, AI-assisted applications and immersive 3D web experiences through projects such as SearchX and my interactive 3D portfolio.',
+      active: true,
+    },
   ];
 
   return (
@@ -24,9 +53,9 @@ export default function JourneySection() {
         {/* Vertical Timeline Wire Line */}
         <div className="absolute left-[7px] sm:left-[111px] top-4 bottom-4 w-[1px] bg-[#242424]" />
 
-        <div className="flex flex-col gap-16">
-          {milestones.map((m, idx) => (
-            <div key={idx} className="relative flex flex-col sm:flex-row items-start gap-6 group">
+        <div className="flex flex-col gap-12">
+          {milestones.map((m) => (
+            <div key={m.num} className="relative flex flex-col sm:flex-row items-start gap-6 group">
               
               {/* Year Marker (Left Column) */}
               <div className="sm:absolute sm:-left-32 sm:w-24 text-left sm:text-right font-mono text-2xl font-extrabold tracking-tight text-[#A6B84A] flex items-center sm:justify-end gap-3">
@@ -43,13 +72,13 @@ export default function JourneySection() {
               {/* Milestone Details (Right Column) */}
               <div className="bg-[#090909] border border-[#242424] p-8 rounded-[2px] w-full group-hover:border-[#3A3A32] transition-colors">
                 <div className="font-mono text-xs text-[#A6B84A] tracking-widest uppercase mb-2 font-semibold">
-                  MILESTONE // 0{idx + 1}
+                  {m.label}
                 </div>
                 <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#F2F2F0] tracking-tight uppercase">
-                  {m.role}
+                  {m.title}
                 </h3>
                 <p className="font-sans text-sm text-[#8A8A86] mt-2 leading-relaxed">
-                  {m.focus}
+                  {m.description}
                 </p>
               </div>
             </div>
