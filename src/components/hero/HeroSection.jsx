@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, lazy, Suspense } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import WorkbenchScene from '../3d/WorkbenchScene';
+
+const WorkbenchScene = lazy(() => import('../3d/WorkbenchScene'));
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -23,7 +24,7 @@ export default function HeroSection() {
 
   useGSAP(() => {
     // 1. PIN THE 3D SCENE CONTAINER TO VIEWPORT FOR 400VH SCROLL DISTANCE
-    ScrollTrigger.create({
+    const pinTrigger = ScrollTrigger.create({
       trigger: heroRef.current,
       start: 'top top',
       end: 'bottom bottom',
@@ -56,6 +57,10 @@ export default function HeroSection() {
         scrub: 1.0,
       },
     });
+
+    return () => {
+      pinTrigger.kill();
+    };
   }, { scope: heroRef });
 
   return (
@@ -84,7 +89,13 @@ export default function HeroSection() {
           ref={canvasWrapperRef} 
           className="absolute inset-0 w-full h-full z-0 bg-[#050505]"
         >
-          <WorkbenchScene onDebugUpdate={setDebugInfo} />
+          <Suspense fallback={
+            <div className="w-full h-full bg-[#050505] flex items-center justify-center font-mono text-xs text-[#8A8A86]">
+              <span>INITIALIZING_3D_ENVIRONMENT...</span>
+            </div>
+          }>
+            <WorkbenchScene onDebugUpdate={setDebugInfo} />
+          </Suspense>
         </div>
 
         {/* Floating Scroll Indicator Overlay */}

@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import HeroSection from './components/hero/HeroSection';
 import AboutSection from './components/sections/AboutSection';
 import ProjectsSection from './components/sections/ProjectsSection';
 import CertificationsSection from './components/sections/CertificationsSection';
 import JourneySection from './components/sections/JourneySection';
 import ContactSection from './components/sections/ContactSection';
-import ProjectCaseStudy from './components/projects/ProjectCaseStudy';
-import ResumeViewerPage from './components/resume/ResumeViewerPage';
 import { Navbar } from './components/layout/Navbar';
 import SmoothScroll from './components/layout/SmoothScroll';
+
+// Lazy-loaded heavy components & routes (Code Splitting)
+const ProjectCaseStudy = lazy(() => import('./components/projects/ProjectCaseStudy'));
+const ResumeViewerPage = lazy(() => import('./components/resume/ResumeViewerPage'));
 
 function App() {
   const [activeProjectSlug, setActiveProjectSlug] = useState(null);
@@ -97,39 +99,45 @@ function App() {
     <SmoothScroll>
       <div className="relative min-h-screen bg-[#050505] text-[#F2F2F0] font-sans antialiased selection:bg-[#A6B84A] selection:text-[#050505] overflow-x-hidden">
         
-        {/* Global Fixed Top Navbar (Present across Main Portfolio, Case Studies, and Resume Viewer) */}
+        {/* Global Fixed Top Navbar */}
         <Navbar onNavigateSection={handleSectionNavigation} />
 
-        {/* Dynamic View Rendering */}
-        {isResumeView ? (
-          <ResumeViewerPage />
-        ) : activeProjectSlug ? (
-          <ProjectCaseStudy 
-            projectSlug={activeProjectSlug} 
-            onClose={closeProject} 
-            onNavigateNext={(nextSlug) => openProject(nextSlug)} 
-          />
-        ) : (
-          <>
-            {/* 1. 3D Intro & Portfolio Starting Hero Screen */}
-            <HeroSection />
+        {/* Dynamic View Rendering with Suspense */}
+        <Suspense fallback={
+          <div className="min-h-screen bg-[#050505] flex items-center justify-center font-mono text-xs text-[#A6B84A]">
+            <span>LOADING_MODULE...</span>
+          </div>
+        }>
+          {isResumeView ? (
+            <ResumeViewerPage />
+          ) : activeProjectSlug ? (
+            <ProjectCaseStudy 
+              projectSlug={activeProjectSlug} 
+              onClose={closeProject} 
+              onNavigateNext={(nextSlug) => openProject(nextSlug)} 
+            />
+          ) : (
+            <>
+              {/* 1. 3D Intro & Portfolio Starting Hero Screen */}
+              <HeroSection />
 
-            {/* 2. About Section */}
-            <AboutSection />
+              {/* 2. About Section */}
+              <AboutSection />
 
-            {/* 3. Projects Archive Section */}
-            <ProjectsSection onOpenProject={openProject} />
+              {/* 3. Projects Archive Section */}
+              <ProjectsSection onOpenProject={openProject} />
 
-            {/* 4. Honors & Achievements Recognition Ledger */}
-            <CertificationsSection />
+              {/* 4. Honors & Achievements Recognition Ledger */}
+              <CertificationsSection />
 
-            {/* 5. Development Journey Section */}
-            <JourneySection />
+              {/* 5. Development Journey Section */}
+              <JourneySection />
 
-            {/* 6. System Terminal Contact Section */}
-            <ContactSection />
-          </>
-        )}
+              {/* 6. System Terminal Contact Section */}
+              <ContactSection />
+            </>
+          )}
+        </Suspense>
 
       </div>
     </SmoothScroll>
