@@ -3,127 +3,99 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import WorkbenchScene from '../3d/WorkbenchScene';
-import { Navbar } from '../layout/Navbar';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function HeroSection() {
-  const containerRef = useRef();
+  const heroRef = useRef();
+  const sceneContainerRef = useRef();
   const scrollHintRef = useRef();
-  const canvasRef = useRef();
-  const [introFinished, setIntroFinished] = useState(false);
+  const canvasWrapperRef = useRef();
+  
+  // Dev Debug State
+  const [debugInfo, setDebugInfo] = useState({
+    show: false,
+    stageName: 'SHOT 01 — ESTABLISHING OVERVIEW',
+    progress: 0,
+    camPos: [26.5, 23.8, 28.5],
+    targetPos: [-1.28, 11.9, -1.20],
+  });
 
   useGSAP(() => {
-    // 1. Fade out initial scroll hint
+    // 1. PIN THE 3D SCENE CONTAINER TO VIEWPORT FOR 400VH SCROLL DISTANCE
+    ScrollTrigger.create({
+      trigger: heroRef.current,
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: sceneContainerRef.current,
+      pinSpacing: false,
+      scrub: 1.0,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+    });
+
+    // 2. Scroll Indicator Fade Out (0.00 -> 0.05)
     gsap.to(scrollHintRef.current, {
       opacity: 0,
-      y: 20,
+      y: -15,
       scrollTrigger: {
-        trigger: '#intro-3d-scroll-area',
+        trigger: heroRef.current,
         start: 'top top',
-        end: '15% top',
+        end: '5% top',
         scrub: true,
       },
     });
 
-    // 2. Fade in 3D Canvas
-    gsap.fromTo(canvasRef.current, { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out' });
-
-    // 3. Monitor Zoom Transition: As camera pushes into monitor screen, fade 3D Canvas out
-    ScrollTrigger.create({
-      trigger: '#intro-3d-scroll-area',
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: true,
-      onUpdate: (self) => {
-        const p = self.progress;
-        // As scroll approaches 80%-100%, fade 3D canvas out into the HTML portfolio
-        if (p > 0.78) {
-          const fadeOpacity = Math.max(0, 1 - (p - 0.78) / 0.18);
-          if (canvasRef.current) {
-            canvasRef.current.style.opacity = fadeOpacity.toString();
-          }
-          if (p >= 0.95) {
-            setIntroFinished(true);
-          } else {
-            setIntroFinished(false);
-          }
-        } else {
-          if (canvasRef.current) {
-            canvasRef.current.style.opacity = '1';
-          }
-          setIntroFinished(false);
-        }
+    // 3. Smooth Seamless 3D Intro -> Portfolio Transition (0.90 -> 1.00)
+    gsap.to(canvasWrapperRef.current, {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: heroRef.current,
+        start: '90% top',
+        end: 'bottom bottom',
+        scrub: 1.0,
       },
     });
-  }, { scope: containerRef });
+  }, { scope: heroRef });
 
   return (
-    <div ref={containerRef} className="relative bg-[#F3F1EC] text-[#111111]">
-      {/* Production Top Navbar */}
-      <Navbar />
-
-      {/* Full-Screen 3D Intro Canvas (Active during scroll through door to monitor) */}
+    <section 
+      ref={heroRef} 
+      className="relative w-full h-[400vh] bg-[#050505] text-[#F2F2F0]" 
+      id="hero-3d-scroll-area"
+    >
+      {/* GSAP Pinned Viewport Container */}
       <div 
-        ref={canvasRef} 
-        className={`fixed inset-0 w-full h-screen z-0 transition-opacity duration-300 ${introFinished ? 'pointer-events-none opacity-0' : 'pointer-events-auto'}`}
+        ref={sceneContainerRef} 
+        className="w-full h-screen bg-[#050505] relative overflow-hidden z-10"
       >
-        <WorkbenchScene />
-      </div>
-
-      {/* Pinned 3D Intro Scroll Distance (150vh) */}
-      <div className="relative z-10 w-full" id="intro-3d-scroll-area">
-        <section className="h-screen flex flex-col justify-end items-center pb-12 px-6 pointer-events-none">
-          <div 
-            ref={scrollHintRef} 
-            className="pointer-events-auto flex flex-col items-center gap-2 font-mono text-[11px] tracking-[0.25em] uppercase text-[#666666]"
-          >
-            <span>SCROLL TO ENTER</span>
-            <span className="animate-bounce text-sm text-[#B8F500] font-bold bg-[#151515] px-2 py-0.5 rounded-full shadow-sm">↓</span>
+        {/* Development Debug Panel (Only visible when debugInfo.show === true) */}
+        {debugInfo.show && (
+          <div className="fixed top-20 right-6 z-50 bg-[#090909]/90 backdrop-blur-md border border-[#242424] p-3.5 rounded font-mono text-[10px] text-[#8A8A86] shadow-xl pointer-events-none space-y-1">
+            <div className="text-[#A6B84A] font-bold uppercase">{debugInfo.stageName}</div>
+            <div>PROGRESS: {(debugInfo.progress * 100).toFixed(1)}%</div>
+            <div>CAM: [{debugInfo.camPos.map(v => v.toFixed(1)).join(', ')}]</div>
+            <div>TARGET: [{debugInfo.targetPos.map(v => v.toFixed(1)).join(', ')}]</div>
           </div>
-        </section>
-        <div className="h-[50vh] w-full pointer-events-none" />
+        )}
+
+        {/* WebGL 3D Canvas Wrapper */}
+        <div 
+          ref={canvasWrapperRef} 
+          className="absolute inset-0 w-full h-full z-0 bg-[#050505]"
+        >
+          <WorkbenchScene onDebugUpdate={setDebugInfo} />
+        </div>
+
+        {/* Floating Scroll Indicator Overlay */}
+        <div 
+          ref={scrollHintRef}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 pointer-events-auto flex flex-col items-center gap-2 font-mono text-[11px] tracking-[0.25em] uppercase text-[#8A8A86]"
+        >
+          <span>SCROLL TO ENTER</span>
+          <span className="animate-bounce text-sm text-[#A6B84A] font-bold bg-[#080808] px-2.5 py-1 rounded-full border border-[#242424] shadow-lg">↓</span>
+        </div>
       </div>
-
-      {/* ============================================================ */}
-      {/* THE ACTUAL HTML PORTFOLIO WEBSITE (Inside PC Monitor Screen)   */}
-      {/* ============================================================ */}
-      <div className="relative z-20 w-full bg-[#F3F1EC] text-[#111111]">
-        {/* HERO STARTING SCREEN */}
-        <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 max-w-7xl mx-auto pt-24">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#B8F500] uppercase tracking-[0.25em] mb-6 bg-[#151515] px-3.5 py-1.5 rounded-[2px] w-fit">
-            <span className="w-2 h-2 rounded-full bg-[#B8F500] animate-pulse" />
-            <span>MEET / DEV · SYSTEM_ACTIVE</span>
-          </div>
-          
-          <h1 className="font-heading font-bold text-5xl sm:text-7xl md:text-8xl text-[#111111] tracking-tight leading-[0.95] mb-6">
-            MEET ALSHI
-          </h1>
-
-          <p className="font-mono text-lg sm:text-2xl md:text-3xl text-[#666666] tracking-wide uppercase font-semibold mb-6">
-            FULL-STACK DEVELOPER
-          </p>
-
-          <p className="font-sans text-base sm:text-xl text-[#444444] max-w-2xl leading-relaxed mb-10">
-            Building digital products, scalable distributed systems, and real-time interactive web platforms.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#projects"
-              className="px-6 py-3.5 bg-[#151515] text-[#F3F1EC] font-mono text-xs font-bold uppercase tracking-wider rounded-[2px] hover:bg-[#B8F500] hover:text-[#111111] transition-all shadow-sm"
-            >
-              EXPLORE PROJECTS ↓
-            </a>
-            <a
-              href="#contact"
-              className="px-6 py-3.5 bg-transparent border border-black/20 text-[#111111] font-mono text-xs font-semibold uppercase tracking-wider rounded-[2px] hover:border-black transition-all"
-            >
-              CONTACT ME
-            </a>
-          </div>
-        </section>
-      </div>
-    </div>
+    </section>
   );
 }

@@ -1,55 +1,91 @@
 export default function AboutSection() {
-  const skills = [
-    { category: 'Frontend Architecture', items: ['React', 'Next.js', 'Three.js / WebGL', 'Tailwind CSS', 'TypeScript'] },
-    { category: 'Backend & Systems', items: ['Node.js', 'Python', 'Distributed Systems', 'Express', 'REST & GraphQL'] },
-    { category: 'Databases & Cloud', items: ['Cloud Firestore', 'MongoDB', 'Firebase', 'PostgreSQL', 'Docker'] },
-    { category: 'AI & Performance', items: ['Gemini API', 'Vector Embeddings', 'Core Web Vitals', 'GSAP Animations'] },
+  const stackGroups = [
+    {
+      num: '01',
+      category: 'FRONTEND ARCHITECTURE',
+      items: ['React', 'Next.js', 'Three.js / WebGL', 'Tailwind CSS', 'TypeScript'],
+    },
+    {
+      num: '02',
+      category: 'BACKEND & SYSTEMS',
+      items: ['Node.js', 'Python', 'Distributed Systems', 'Express', 'REST & GraphQL'],
+    },
+    {
+      num: '03',
+      category: 'DATA & CLOUD',
+      items: ['Cloud Firestore', 'MongoDB', 'Firebase', 'PostgreSQL', 'Docker'],
+    },
+    {
+      num: '04',
+      category: 'AI & PERFORMANCE',
+      items: ['Gemini API', 'Vector Embeddings', 'Core Web Vitals', 'GSAP Animations'],
+    },
   ];
 
   return (
-    <section id="about" className="py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto border-t border-black/10">
-      <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+    <section id="about" className="py-28 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto border-t border-[#242424] bg-[#050505] text-[#F2F2F0]">
+      
+      {/* Editorial Header & Bio */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
         
         {/* Left Column: Heading */}
-        <div className="md:w-1/3">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-[0.25em] mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#B8F500]" />
+        <div className="lg:col-span-5">
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#A6B84A] uppercase tracking-[0.25em] mb-4">
+            <span className="w-2 h-2 rounded-full bg-[#B7F000]" />
             <span>[ 01 // ABOUT ]</span>
           </div>
-          <h2 className="font-heading font-bold text-4xl md:text-5xl text-[#111111] tracking-tight leading-tight">
-            ENGINEERING DIGITAL EXPERIENCES
+          <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#F2F2F0] tracking-tight leading-[1.05] uppercase">
+            ENGINEERING <br className="hidden sm:inline" />
+            DIGITAL <br className="hidden sm:inline" />
+            EXPERIENCES
           </h2>
         </div>
 
-        {/* Right Column: Bio */}
-        <div className="md:w-2/3 flex flex-col gap-6 text-[#444444] text-base md:text-lg leading-relaxed">
-          <p className="font-sans">
+        {/* Right Column: Narrative */}
+        <div className="lg:col-span-7 flex flex-col justify-end gap-6 text-[#8A8A86] text-base sm:text-lg leading-relaxed font-sans border-l border-[#242424] pl-0 sm:pl-8 lg:pl-12">
+          <p>
             I am a full-stack engineer passionate about building high-performance web applications, scalable distributed systems, and immersive 3D web interfaces. My work bridges technical rigor with refined architectural aesthetics.
           </p>
-          <p className="font-sans">
+          <p>
             From architecting real-time emergency dispatch platforms to developing AI-assisted financial trading tools and high-throughput search engines, I craft software that delivers measurable impact.
           </p>
         </div>
       </div>
 
-      {/* Technical Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-8 border-t border-black/10">
-        {skills.map((group, idx) => (
-          <div key={idx} className="bg-[#E8E7E2] p-6 rounded-[4px] border border-black/5 flex flex-col justify-between">
-            <h3 className="font-mono text-xs font-bold text-[#111111] uppercase tracking-wider mb-4 border-b border-black/10 pb-2">
-              {group.category}
-            </h3>
-            <ul className="flex flex-col gap-2">
-              {group.items.map((item, itemIdx) => (
-                <li key={itemIdx} className="font-sans text-sm text-[#444444] flex items-center gap-2">
-                  <span className="text-[#B8F500] font-bold">›</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      {/* Single Wide Technical STACK / CAPABILITIES Specification Panel */}
+      <div className="border border-[#242424] bg-[#090909] rounded-[2px] overflow-hidden">
+        {/* Panel Top Title */}
+        <div className="px-6 py-4 border-b border-[#242424] bg-[#070707] flex justify-between items-center font-mono text-xs text-[#8A8A86] uppercase tracking-wider">
+          <span className="text-[#A6B84A] font-bold">SYSTEM CAPABILITIES // STACK SPECIFICATION</span>
+          <span className="hidden sm:inline text-[#5F5F5B]">V2.6 CORE</span>
+        </div>
+
+        {/* 4 Vertical Columns Specification Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#242424]">
+          {stackGroups.map((group) => (
+            <div key={group.num} className="p-8 flex flex-col justify-between group hover:bg-[#0D0D0D] transition-colors">
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <span className="font-mono text-xs font-bold text-[#A6B84A] tracking-widest">[ {group.num} ]</span>
+                  <span className="w-1.5 h-1.5 bg-[#242424] group-hover:bg-[#A6B84A] transition-colors" />
+                </div>
+                <h3 className="font-mono text-xs font-bold text-[#F2F2F0] uppercase tracking-wider mb-6 pb-3 border-b border-[#242424]">
+                  {group.category}
+                </h3>
+                <ul className="flex flex-col gap-3 font-mono text-xs text-[#8A8A86]">
+                  {group.items.map((item, idx) => (
+                    <li key={idx} className="flex items-center justify-between group/item">
+                      <span className="group-hover/item:text-[#F2F2F0] transition-colors">{item}</span>
+                      <span className="text-[#5F5F5B] group-hover/item:text-[#A6B84A] transition-colors">.0{idx + 1}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
     </section>
   );
 }

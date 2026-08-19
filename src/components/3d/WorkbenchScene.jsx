@@ -5,53 +5,70 @@ import * as THREE from 'three';
 import RoomEnvironment from './RoomEnvironment';
 import JourneyCamera from './JourneyCamera';
 
-export default function WorkbenchScene() {
+export default function WorkbenchScene({ onDebugUpdate }) {
   const doorHingeRef = useRef();
 
   return (
-    <div className="w-full h-full" id="canvas-container">
+    <div className="w-full h-full bg-[#050505]" id="canvas-container">
       <Canvas 
         dpr={[1, 2]} 
-        camera={{ position: [0, 1.7, 12.0], fov: 42 }}
+        camera={{ position: [26.5, 23.8, 28.5], fov: 48, near: 0.1, far: 1000 }}
         shadows
         gl={{
           toneMapping: THREE.ACESFilmicToneMapping,
-          toneMappingExposure: 1.0,
+          toneMappingExposure: 1.1,
           outputColorSpace: THREE.SRGBColorSpace,
           antialias: true,
         }}
       >
-        {/* Background: Architectural Warm Off-White #F3F1EC */}
-        <color attach="background" args={['#F3F1EC']} />
+        {/* Background: Near-Black #050505 (Seamless matching with main portfolio background) */}
+        <color attach="background" args={['#050505']} />
 
         {/* ============================================================ */}
-        {/* SOFT ARCHITECTURAL STUDIO LIGHTING                           */}
+        {/* VIBRANT ATMOSPHERIC LIGHTING SETUP (MATCHING MODEL MATERIALS)*/}
         {/* ============================================================ */}
-        {/* 1. Soft Warm Ambient Light */}
-        <ambientLight intensity={0.7} color="#FDFBF7" />
+        {/* 1. Warm Bright Ambient Light */}
+        <ambientLight intensity={1.1} color="#FFF8F0" />
 
-        {/* 2. Soft Key Sunlight / Studio Light */}
+        {/* 2. Main Window Daylight */}
         <directionalLight 
-          position={[-6, 12, 6]} 
-          intensity={1.1} 
-          color="#FFFDF8"
+          position={[-20, 30, -5]} 
+          intensity={1.5} 
+          color="#FFFFFF"
           castShadow
           shadow-bias={-0.0001}
           shadow-mapSize={[2048, 2048]}
         />
 
-        {/* 3. Soft Architectural Fill Light */}
-        <directionalLight position={[8, 8, -4]} intensity={0.35} color="#D8D5CE" />
+        {/* 3. Bright Cyan Monitor Glow */}
+        <pointLight 
+          position={[0.0, 8.5, -8.5]} 
+          intensity={4.5} 
+          distance={15} 
+          color="#00F0FF" 
+          decay={2}
+        />
 
-        {/* 4. Front Bounce Fill Light */}
-        <directionalLight position={[2, 4, 10]} intensity={0.25} color="#F3F1EC" />
+        {/* 4. Warm Pink/Magenta Curtain Spotlight */}
+        <spotLight 
+          position={[-11.0, 14.0, -2.0]} 
+          target-position={[-11.0, 8.0, -6.0]}
+          intensity={4.0} 
+          color="#FF6688" 
+          angle={Math.PI / 3} 
+          penumbra={0.4}
+        />
+
+        {/* 5. Front Fill Light */}
+        <directionalLight position={[15, 18, 20]} intensity={0.5} color="#E2E8F0" />
 
         <Suspense fallback={null}>
           <RoomEnvironment doorHingeRef={doorHingeRef} />
           <BakeShadows />
         </Suspense>
 
-        <JourneyCamera doorHingeRef={doorHingeRef} />
+        {/* Master Camera Controller */}
+        <JourneyCamera doorHingeRef={doorHingeRef} onDebugUpdate={onDebugUpdate} />
       </Canvas>
     </div>
   );

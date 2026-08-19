@@ -1,64 +1,71 @@
 import { PROJECTS } from '../../data/projects';
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ onOpenProject }) {
   return (
-    <section id="projects" className="py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto border-t border-black/10">
+    <section id="projects" className="py-28 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto border-t border-[#242424] bg-[#050505] text-[#F2F2F0]">
       
-      {/* Section Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+      {/* Editorial Section Header */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6 pb-8 border-b border-[#242424]">
         <div>
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#666666] uppercase tracking-[0.25em] mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#B8F500]" />
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#A6B84A] uppercase tracking-[0.25em] mb-4">
+            <span className="w-2 h-2 rounded-full bg-[#B7F000]" />
             <span>[ 02 // FEATURED BUILDS ]</span>
           </div>
-          <h2 className="font-heading font-bold text-4xl md:text-5xl text-[#111111] tracking-tight">
+          <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#F2F2F0] tracking-tight uppercase">
             PROJECT ARCHIVE
           </h2>
         </div>
-        <p className="font-mono text-xs text-[#666666] uppercase tracking-widest">
-          2024 — 2026 · SELECTED WORK
+        <p className="font-mono text-xs text-[#8A8A86] uppercase tracking-widest">
+          2024 — 2026 · SELECTED WORKS
         </p>
       </div>
 
-      {/* Projects 2x2 Grid */}
+      {/* Editorial 2-Column Project Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {PROJECTS.map((project) => (
           <div 
             key={project.id}
-            className="bg-[#111214] border border-white/10 p-8 rounded-[4px] shadow-2xl flex flex-col justify-between h-[360px] group transition-all duration-300 hover:border-[#B8F500]/60 relative overflow-hidden"
+            onClick={() => onOpenProject && onOpenProject(project.slug)}
+            className="bg-[#090909] border border-[#242424] p-8 rounded-[2px] flex flex-col justify-between h-[310px] group transition-all duration-300 hover:-translate-y-[3px] hover:border-[#3A3A32] relative overflow-hidden cursor-pointer shadow-none"
           >
-            {/* Top Bar */}
-            <div className="flex justify-between items-center font-mono text-xs text-[#A0A0A0] uppercase border-b border-white/10 pb-4">
-              <span className="text-[#B8F500] font-bold tracking-widest">{project.buildId}</span>
-              <span className="tracking-widest text-[#A0A0A0] font-semibold">{project.category}</span>
+            {/* Top Subtle Hover Accent Line */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-transparent group-hover:bg-[#A6B84A] transition-colors duration-300" />
+
+            {/* Top Row: [■ BUILD_001] & Category */}
+            <div className="flex justify-between items-center font-mono text-xs uppercase pb-4 border-b border-[#242424]">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B7F000] shrink-0" />
+                <span className="text-[#A6B84A] font-bold tracking-widest">{project.buildId}</span>
+              </div>
+              <span className="tracking-widest text-[#8A8A86] font-medium">{project.category}</span>
             </div>
 
-            {/* Main Content */}
-            <div className="flex flex-col gap-3 my-auto z-10">
-              <h3 className="font-heading font-bold text-3xl md:text-4xl text-[#F1F0EB] tracking-tight group-hover:text-white transition-colors">
+            {/* Main Content: Large Title & Tagline */}
+            <div className="flex flex-col gap-2 my-auto">
+              <h3 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#F2F2F0] tracking-tight group-hover:text-white group-hover:translate-x-0.5 transition-transform uppercase">
                 {project.name}
               </h3>
-              <p className="font-sans text-sm md:text-base text-[#858887] leading-relaxed max-w-md">
+              <p className="font-sans text-xs sm:text-sm text-[#8A8A86] leading-relaxed line-clamp-2">
                 {project.tagline}
               </p>
             </div>
 
-            {/* Footer Bar */}
-            <div className="flex items-center justify-between font-mono text-xs pt-4 border-t border-white/10 z-10">
-              <div className="flex gap-2 flex-wrap text-[#C0C0C0]">
+            {/* Bottom Row: Tech Tags & EXPLORE Action */}
+            <div className="flex items-center justify-between font-mono text-xs pt-4 border-t border-[#242424]">
+              <div className="flex gap-2 flex-wrap text-[#8A8A86]">
                 {project.techStack.map((tech, idx) => (
-                  <span key={idx} className="bg-white/10 px-2.5 py-1 rounded text-xs">
+                  <span key={idx} className="bg-[#080808] border border-[#242424] px-2.5 py-0.5 rounded-[2px] text-[11px] text-[#8A8A86]">
                     {tech}
                   </span>
                 ))}
               </div>
-              <a 
-                href={`#${project.id}`}
-                className="text-[#B8F500] font-mono text-xs tracking-widest font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+              <button 
+                type="button"
+                className="text-[#F2F2F0] group-hover:text-[#A6B84A] font-mono text-xs tracking-widest font-bold flex items-center gap-1.5 ml-2 shrink-0 transition-colors"
               >
                 <span>EXPLORE</span>
-                <span>→</span>
-              </a>
+                <span className="text-[#A6B84A] group-hover:translate-x-1.5 transition-transform inline-block">→</span>
+              </button>
             </div>
           </div>
         ))}
