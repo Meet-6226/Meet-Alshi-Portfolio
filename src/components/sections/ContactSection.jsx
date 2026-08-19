@@ -4,112 +4,95 @@ import ContactModal from '../contact/ContactModal';
 export default function ContactSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const socialLinks = [
-    { name: 'LINKEDIN', url: 'https://www.linkedin.com/in/meet-alshi/' },
-    { name: 'GITHUB', url: 'https://github.com/Meet-6226' },
-  ];
-
   return (
     <section id="contact" className="py-28 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto border-t border-[#242424] bg-[#050505] text-[#F2F2F0]">
       
-      {/* System Terminal Call-To-Action Panel */}
-      <div className="bg-[#090909] border border-[#242424] p-10 sm:p-16 rounded-[2px] shadow-2xl relative overflow-hidden mb-16">
+      {/* Contact Modal Dialog */}
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
+      {/* Main Terminal Box Container */}
+      <div className="bg-[#080808] border border-[#242424] p-8 sm:p-14 lg:p-20 rounded-[2px] relative overflow-hidden flex flex-col gap-12 shadow-2xl">
         
-        {/* Terminal Header Bar */}
-        <div className="flex justify-between items-center font-mono text-xs text-[#8A8A86] uppercase pb-6 border-b border-[#242424] mb-10">
-          <div className="flex items-center gap-2.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#B7F000]" />
-            <span className="text-[#A6B84A] font-bold tracking-widest">[ 05 // CONTACT ]</span>
+        {/* Top Telemetry Header */}
+        <div className="flex justify-between items-center font-mono text-xs uppercase text-[#8A8A86] border-b border-[#242424] pb-6">
+          <div className="flex items-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-[#B7F000] animate-pulse" />
+            <span className="text-[#A6B84A] font-bold tracking-widest">[ CONTACT // 01 ]</span>
           </div>
-          <span className="hidden sm:inline text-[#5F5F5B]">SYSTEM DISPATCH // OPEN FOR ROLES</span>
+          <span className="tracking-widest text-[#5F5F5B]">AVAILABILITY: OPEN FOR OPPORTUNITIES</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
-          {/* Main Title & Description */}
-          <div className="lg:col-span-8">
-            <h2 className="font-heading font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.0] text-[#F2F2F0] uppercase mb-6">
-              LET'S BUILD <br />
-              SOMETHING.
-            </h2>
-            <p className="font-sans text-[#8A8A86] text-base sm:text-lg max-w-xl leading-relaxed">
-              Open to software engineering internships, full-stack opportunities, and collaborations where I can build meaningful digital products.
-            </p>
+        {/* Large Prominent Header */}
+        <div className="flex flex-col gap-4 max-w-3xl">
+          <h2 className="font-heading font-extrabold text-4xl sm:text-6xl lg:text-7xl text-[#F2F2F0] tracking-tight uppercase leading-[0.95]">
+            LET'S BUILD SOMETHING.
+          </h2>
+          <p className="font-sans text-base sm:text-xl text-[#8A8A86] leading-relaxed">
+            Have a project, opportunity, or idea worth exploring? Tell me a little about what you'd like to build.
+          </p>
+        </div>
+
+        {/* Direct Action Strip */}
+        <div className="flex flex-wrap gap-4 pt-4">
+          <button 
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="px-8 py-4 bg-[#A6B84A] text-[#050505] font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#B7F000] hover:scale-[1.02] transition-all rounded-[2px] flex items-center gap-3 shadow-lg"
+          >
+            <span>GET IN TOUCH</span>
+            <span>→</span>
+          </button>
+
+          <a 
+            href="#/resume"
+            className="px-8 py-4 bg-[#090909] border border-[#242424] text-[#F2F2F0] font-mono text-xs font-bold uppercase tracking-widest hover:border-[#A6B84A] hover:text-[#A6B84A] transition-all rounded-[2px] flex items-center gap-2"
+          >
+            <span>VIEW RESUME</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        {/* Social Links Ledger Footer */}
+        <div className="pt-10 border-t border-[#242424] grid grid-cols-1 sm:grid-cols-3 gap-6 font-mono text-xs text-[#8A8A86] uppercase">
+          <div>
+            <span className="text-[#5F5F5B] block mb-1">LINKEDIN</span>
+            <a 
+              href="https://www.linkedin.com/in/meet-alshi/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-[#F2F2F0] hover:text-[#A6B84A] font-semibold transition-colors flex items-center gap-1"
+            >
+              <span>meet-alshi</span>
+              <span>↗</span>
+            </a>
           </div>
 
-          {/* Action Buttons */}
-          <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 w-full">
-            <button
-              type="button"
-              onClick={() => setIsModalOpen(true)}
-              className="px-8 py-4 bg-[#A6B84A] text-[#050505] font-mono text-xs font-bold uppercase tracking-widest rounded-[2px] hover:bg-[#B7F000] hover:-translate-y-0.5 transition-all text-center shadow-lg"
+          <div>
+            <span className="text-[#5F5F5B] block mb-1">GITHUB</span>
+            <a 
+              href="https://github.com/Meet-6226" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-[#F2F2F0] hover:text-[#A6B84A] font-semibold transition-colors flex items-center gap-1"
             >
-              GET IN TOUCH →
-            </button>
-            <a
-              href="#/resume"
-              className="px-8 py-4 bg-[#080808] border border-[#242424] text-[#F2F2F0] font-mono text-xs font-semibold uppercase tracking-widest rounded-[2px] hover:bg-[#A6B84A] hover:text-[#050505] hover:border-[#A6B84A] transition-all text-center"
+              <span>Meet-6226</span>
+              <span>↗</span>
+            </a>
+          </div>
+
+          <div>
+            <span className="text-[#5F5F5B] block mb-1">DIRECT EMAIL</span>
+            <a 
+              href="mailto:meet.alshi@gmail.com" 
+              className="text-[#F2F2F0] hover:text-[#A6B84A] font-semibold transition-colors flex items-center gap-1"
             >
-              DOWNLOAD RESUME
+              <span>meet.alshi@gmail.com</span>
+              <span>↗</span>
             </a>
           </div>
         </div>
 
-        {/* Compact Technical Social Links Strip inside Terminal Panel */}
-        <div className="mt-12 pt-8 border-t border-[#242424]">
-          <div className="font-mono text-xs text-[#8A8A86] uppercase tracking-widest mb-4">
-            SOCIAL CHANNELS
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md font-mono text-xs">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-3.5 bg-[#080808] border border-[#242424] rounded-[2px] text-[#F2F2F0] hover:text-[#A6B84A] hover:border-[#A6B84A] transition-all group"
-              >
-                <span className="font-semibold tracking-wider group-hover:translate-x-1 transition-transform inline-block">
-                  {social.name}
-                </span>
-                <span className="text-[#A6B84A] font-bold text-sm">↗</span>
-              </a>
-            ))}
-          </div>
-        </div>
-
       </div>
-
-      {/* Editorial Footer with LinkedIn & GitHub Links */}
-      <div className="pt-8 border-t border-[#242424] flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-[#8A8A86] gap-4">
-        <div className="flex items-center gap-2">
-          <span className="text-[#B7F000]">●</span>
-          <span>MEET ALSHI · FULL-STACK DEVELOPER</span>
-        </div>
-        
-        <div className="flex items-center gap-6">
-          <span className="text-[#5F5F5B]">2026 ARCHITECTURAL PORTFOLIO</span>
-          <span className="text-[#242424]">|</span>
-          <a 
-            href="https://www.linkedin.com/in/meet-alshi/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hover:text-[#A6B84A] transition-colors flex items-center gap-1 font-semibold"
-          >
-            LINKEDIN ↗
-          </a>
-          <a 
-            href="https://github.com/Meet-6226" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hover:text-[#A6B84A] transition-colors flex items-center gap-1 font-semibold"
-          >
-            GITHUB ↗
-          </a>
-        </div>
-      </div>
-
-      {/* Contact Form Modal Overlay */}
-      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
     </section>
   );

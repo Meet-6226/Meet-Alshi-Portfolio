@@ -5,6 +5,7 @@ import ProjectsSection from './components/sections/ProjectsSection';
 import CertificationsSection from './components/sections/CertificationsSection';
 import JourneySection from './components/sections/JourneySection';
 import ContactSection from './components/sections/ContactSection';
+import InitialLoader from './components/loader/InitialLoader';
 import { Navbar } from './components/layout/Navbar';
 import SmoothScroll from './components/layout/SmoothScroll';
 
@@ -15,6 +16,7 @@ const ResumeViewerPage = lazy(() => import('./components/resume/ResumeViewerPage
 function App() {
   const [activeProjectSlug, setActiveProjectSlug] = useState(null);
   const [isResumeView, setIsResumeView] = useState(false);
+  const [isLoadingComplete, setIsLoadingComplete] = useState(false);
 
   // Sync Hash & Route Location (Supports /projects/spendr, /resume, #resume, etc.)
   useEffect(() => {
@@ -99,6 +101,11 @@ function App() {
     <SmoothScroll>
       <div className="relative min-h-screen bg-[#050505] text-[#F2F2F0] font-sans antialiased selection:bg-[#A6B84A] selection:text-[#050505] overflow-x-hidden">
         
+        {/* Personalized Minimal Technical Loader Experience */}
+        {!isLoadingComplete && (
+          <InitialLoader onComplete={() => setIsLoadingComplete(true)} />
+        )}
+
         {/* Global Fixed Top Navbar */}
         <Navbar onNavigateSection={handleSectionNavigation} />
 
