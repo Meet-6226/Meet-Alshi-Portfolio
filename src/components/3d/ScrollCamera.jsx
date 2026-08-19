@@ -30,7 +30,7 @@ export default function ScrollCamera() {
           let phase = 0; // Stage 1 (Intro) + Stage 2 (Approach) + Stage 3 (Wake)
           if (p > 0.3) phase = 1; // Stage 4 (SPENDR) + Stage 5 (Explore)
           if (p > 0.5) phase = 2; // CAMPUSCARE
-          if (p > 0.7) phase = 3; // MEDICARE
+          if (p > 0.7) phase = 3; // CAMPUSCARE
           if (p > 0.9) phase = 4; // SEARCHX
           setScrollPhase(phase);
         }

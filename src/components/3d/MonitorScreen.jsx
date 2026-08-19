@@ -14,7 +14,7 @@ export default function MonitorScreen() {
           <span className="w-2.5 h-2.5 rounded-full bg-[#B7F000] animate-pulse shadow-[0_0_8px_#B7F000]" />
           <span className="text-[#A6B84A] font-bold text-xs">SYS_001</span>
           <span className="text-[#5F5F5B]">|</span>
-          <span className="text-[#8A8A86]">DEV_WORKSPACE</span>
+          <span className="text-[#8A8A86]">ITM SKILLS UNIVERSITY (2024–2028)</span>
         </div>
         <span className="text-[#5F5F5B] font-semibold">2026</span>
       </div>
@@ -24,11 +24,11 @@ export default function MonitorScreen() {
         <span className="font-mono text-xs text-[#A6B84A] tracking-[0.3em] uppercase mb-2 font-semibold">
           MEET ALSHI
         </span>
-        <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-[#F2F2F0] tracking-tight leading-[1.05] mb-2">
-          FULL-STACK DEVELOPER
+        <h2 className="font-heading font-extrabold text-2xl md:text-3xl text-[#F2F2F0] tracking-tight leading-[1.05] mb-2 uppercase">
+          CS STUDENT & FULL-STACK DEVELOPER
         </h2>
-        <p className="font-sans text-[#8A8A86] text-sm max-w-sm leading-relaxed font-normal">
-          BUILDING DIGITAL PRODUCTS.
+        <p className="font-sans text-[#8A8A86] text-xs max-w-md leading-relaxed font-normal">
+          BUILDING PRACTICAL WEB APPS, AI & REAL-TIME SYSTEMS.
         </p>
       </div>
 

@@ -59,7 +59,7 @@ export default function ProjectWall(props) {
   const cards = [
     { project: PROJECTS[0], pos: [-0.95, 2.35, 0] }, // BUILD_001 — SPENDR (Top-Left)
     { project: PROJECTS[1], pos: [0.95, 2.35, 0] },  // BUILD_002 — CAMPUSCARE (Top-Right)
-    { project: PROJECTS[2], pos: [-0.95, 1.15, 0] }, // BUILD_003 — MEDICARE (Bottom-Left)
+    { project: PROJECTS[2], pos: [-0.95, 1.15, 0] }, // BUILD_003 — CAMPUSCARE (Bottom-Left)
     { project: PROJECTS[3], pos: [0.95, 1.15, 0] },  // BUILD_004 — SEARCHX (Bottom-Right)
   ];
 

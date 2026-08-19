@@ -1,4 +1,4 @@
-import { PROJECTS } from '../../data/projects';
+import { PROJECTS, EXPERIMENTS } from '../../data/projects';
 
 export default function ProjectsSection({ onOpenProject }) {
   return (
@@ -12,16 +12,16 @@ export default function ProjectsSection({ onOpenProject }) {
             <span>[ 02 // FEATURED BUILDS ]</span>
           </div>
           <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#F2F2F0] tracking-tight uppercase">
-            PROJECT ARCHIVE
+            SELECTED PROJECTS
           </h2>
         </div>
         <p className="font-mono text-xs text-[#8A8A86] uppercase tracking-widest">
-          4 FEATURED PROJECTS
+          4 FEATURED BUILDS
         </p>
       </div>
 
       {/* Editorial 2-Column Project Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         {PROJECTS.map((project) => (
           <div 
             key={project.id}
@@ -71,6 +71,39 @@ export default function ProjectsSection({ onOpenProject }) {
                 <span>EXPLORE</span>
                 <span className="text-[#A6B84A] group-hover:translate-x-1.5 transition-transform inline-block">→</span>
               </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Sub-Section: Experiments & Hackathon Builds */}
+      <div className="pt-12 border-t border-[#242424]">
+        <div className="font-mono text-xs text-[#A6B84A] uppercase tracking-widest mb-6 font-semibold flex items-center gap-2">
+          <span>[ EXPERIMENTS / HACKATHON BUILDS ]</span>
+        </div>
+
+        {EXPERIMENTS.map((exp) => (
+          <div key={exp.id} className="bg-[#090909] border border-[#242424] p-8 rounded-[2px] flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+              <div className="flex items-center gap-3 font-mono text-xs text-[#8A8A86] mb-2 uppercase">
+                <span className="text-[#A6B84A] font-bold">{exp.event}</span>
+                <span>•</span>
+                <span>{exp.type}</span>
+              </div>
+              <h3 className="font-heading font-extrabold text-2xl text-[#F2F2F0] uppercase tracking-tight mb-2">
+                {exp.title}
+              </h3>
+              <p className="font-sans text-xs sm:text-sm text-[#8A8A86] max-w-3xl leading-relaxed">
+                {exp.description}
+              </p>
+            </div>
+
+            <div className="flex gap-2 flex-wrap font-mono text-xs shrink-0">
+              {exp.techStack.map((tech, idx) => (
+                <span key={idx} className="bg-[#080808] border border-[#242424] px-3 py-1 rounded-[2px] text-xs text-[#F2F2F0]">
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
         ))}

@@ -6,7 +6,7 @@ import gsap from 'gsap';
 const PROJECTS = [
   { id: 'spendr', name: 'SPENDR', metadata: 'BUILD_001 · FINTECH', position: [4.5, 0.15, -0.5], color: '#222326' },
   { id: 'campuscare', name: 'CAMPUSCARE', metadata: 'BUILD_002 · HEALTH', position: [5.8, 0.15, 0.8], color: '#222326' },
-  { id: 'medicare', name: 'MEDICARE', metadata: 'BUILD_003 · MEDTECH', position: [-4.5, 0.15, -0.5], color: '#222326' },
+  { id: 'campuscare', name: 'CAMPUSCARE', metadata: 'BUILD_003 · SAFETY', position: [-4.5, 0.15, -0.5], color: '#222326' },
   { id: 'searchx', name: 'SEARCHX', metadata: 'BUILD_004 · SYSTEMS', position: [-5.8, 0.15, 0.8], color: '#222326' }
 ];
 

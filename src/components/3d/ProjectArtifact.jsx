@@ -47,7 +47,7 @@ export default function ProjectArtifact() {
   const positions = [
     { pos: [0.75, 0.05, 1.25], rot: [0, 0.08, 0] },    // SPENDR (Foreground / left of viewer)
     { pos: [0.75, 0.05, -1.25], rot: [0, -0.08, 0] },   // CAMPUSCARE (Foreground / right of viewer)
-    { pos: [-0.15, 0.05, 1.65], rot: [0, 0.12, 0] },   // MEDICARE (Middle / left)
+    { pos: [-0.15, 0.05, 1.65], rot: [0, 0.12, 0] },   // CAMPUSCARE (Middle / left)
     { pos: [-0.15, 0.05, -1.65], rot: [0, -0.12, 0] }   // SEARCHX (Middle / right)
   ];
 

@@ -7,38 +7,38 @@ export const PROJECTS = [
     name: 'SPENDR',
     category: 'FINTECH / AI',
     tagline: 'A financial platform designed for teenagers and beginner traders to improve financial literacy through budgeting, financial education, AI assistance and risk-free paper trading.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Firebase', 'MERN Stack'],
-    role: 'FULL-STACK DEVELOPER',
+    techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Firebase', 'MERN Stack'],
+    role: 'Full-Stack Developer',
     team: 'Sakshi, Chaitanya, Jeevan & Meet',
-    type: 'TEAM PROJECT',
+    type: 'Team Project',
     year: '2025',
     status: 'SHOWCASED',
     caseStudy: {
-      heroStatement: 'Learn. Experiment. Understand.',
+      heroStatement: 'Making financial learning practical through budgeting, AI assistance and risk-free trading.',
       whyHeader: 'WHY SPENDR?',
       overview: [
-        'Spendr is a financial platform designed for teenagers and beginner traders to build financial literacy through budgeting, financial education, AI assistance and risk-free paper trading.',
-        'Young users and beginner traders need practical financial education and a safe environment to understand financial decisions before risking real money.'
+        'Spendr is a financial platform designed for teenagers and beginner traders to make financial literacy practical and engaging by combining financial management, education and risk-free experimentation.',
+        'Young users and beginner traders need a safe environment to understand financial decisions before risking real money.'
       ],
       problem: 'Many young adults and beginner traders lack practical financial education and risk-free environments to practice budgeting, stock analysis, and portfolio management before risking real money.',
-      solution: 'Spendr combines intuitive budget tracking, interactive financial education games, an AI financial advisor, and real-time paper trading powered by a virtual coin-based reward system.',
+      solution: 'Spendr combines intuitive budget tracking, goal setting, interactive financial education games, an AI financial advisor with pros & cons stock recommendations, and real-time paper trading powered by a virtual coin-based reward system.',
       features: [
-        { name: 'BUDGET TRACKING', desc: 'Personalized income and expense tracking for everyday financial planning.' },
-        { name: 'GOAL TRACKING', desc: 'Set and monitor short-term and long-term financial saving goals.' },
-        { name: 'FINANCIAL EDUCATION', desc: 'Learn financial concepts through an interactive, gamified education system.' },
-        { name: 'AI FINANCIAL ADVISOR', desc: 'AI-assisted financial guidance and stock-related insights with pros and cons.' },
-        { name: 'PAPER TRADING', desc: 'Practice stock market decisions using a simulated environment with virtual currency.' },
-        { name: 'REWARD SYSTEM', desc: 'Virtual coin-based rewards for engagement, learning, and education milestones.' }
+        { name: 'BUDGET TRACKING', desc: 'Personalized income and expense tracking for daily financial management.' },
+        { name: 'GOAL TRACKING', desc: 'Set and monitor short-term and long-term financial saving targets.' },
+        { name: 'FINANCIAL EDUCATION GAME', desc: 'Interactive gamified learning modules covering financial fundamentals.' },
+        { name: 'AI FINANCIAL ADVISOR', desc: 'AI-assisted answers to financial questions with pros and cons for stock recommendations.' },
+        { name: 'REAL-TIME PAPER TRADING', desc: 'Simulated stock market trading environment with virtual currency.' },
+        { name: 'VIRTUAL REWARDS', desc: 'Coin-based reward store incentivizing financial education milestones.' }
       ],
       technology: [
-        { name: 'FRONTEND', desc: 'React for dynamic interfaces, interactive learning modules, and application workflows.' },
-        { name: 'BACKEND', desc: 'Node.js and Express REST APIs for server-side application logic and financial calculations.' },
+        { name: 'FRONTEND', desc: 'React for dynamic web interfaces and interactive learning workflows.' },
+        { name: 'BACKEND', desc: 'Node.js and Express REST APIs for user budgets, paper trading logic, and AI advisor endpoints.' },
         { name: 'DATA & SERVICES', desc: 'MongoDB for user profiles and budgets; Firebase for authentication and real-time sync.' }
       ],
       contribution: [
         { title: 'FULL-STACK DEVELOPMENT', desc: 'Built application features across the React frontend and Node.js/MongoDB backend.' },
         { title: 'CORE FEATURES', desc: 'Implemented budgeting and goal-management workflows.' },
-        { title: 'INTEGRATION', desc: 'Worked with Sakshi, Chaitanya and Jeevan on integrating application services, testing, and overall product functionality.' }
+        { title: 'TEAM INTEGRATION', desc: 'Worked with Sakshi, Chaitanya and Jeevan on integrating application services, testing, and overall product functionality.' }
       ],
       outcomeTitle: 'SHOWCASED AT ITM SKILLS UNIVERSITY',
       outcome: 'Spendr was showcased during the ITM Skills University Pre-Evolution Round and was later selected for showcase during the junior-batch inauguration.'
@@ -50,20 +50,20 @@ export const PROJECTS = [
     num: '02',
     buildId: 'BUILD_002',
     name: 'AAYU-OPD',
-    category: 'HEALTHTECH / OPD',
-    tagline: 'An outpatient department management system designed to streamline patient registration, doctor scheduling and digital prescription workflows.',
+    category: 'HEALTHTECH / OPD MANAGEMENT',
+    tagline: 'An outpatient department management system focused on improving the patient journey and hospital OPD workflow.',
     techStack: ['React', 'Node.js', 'Express', 'MongoDB'],
-    role: 'FULL-STACK DEVELOPER',
+    role: 'Full-Stack Developer',
     team: 'Development Team',
-    type: 'COMPETITION PROJECT',
+    type: 'Competition Project',
     year: '2025',
     status: '1ST RUNNER-UP',
     caseStudy: {
-      heroStatement: 'Digitize. Schedule. Prescribe.',
+      heroStatement: 'Streamlining hospital outpatient workflows through digital registration, doctor scheduling, and electronic prescriptions.',
       whyHeader: 'WHY AAYU-OPD?',
       overview: [
-        'AAYU-OPD is an outpatient department management system designed to streamline patient registration, doctor scheduling and digital prescription workflows.',
-        'Outpatient departments often experience bottlenecked reception queues and uncoordinated appointment scheduling without digital record coordination.'
+        'AAYU-OPD is an outpatient department management system designed to streamline patient registration, doctor scheduling, digital prescriptions, and reduce manual reception coordination.',
+        'Traditional outpatient departments face long reception queues and uncoordinated appointment tracking without centralized digital records.'
       ],
       problem: 'Traditional outpatient departments face queue bottlenecks, manual record handling, and uncoordinated appointment scheduling for patients and doctors.',
       solution: 'AAYU-OPD digitizes patient registration, structures doctor availability timetables, and provides a unified interface for issuing and storing digital prescriptions.',
@@ -79,12 +79,12 @@ export const PROJECTS = [
         { name: 'DATA & SERVICES', desc: 'MongoDB for patient records and doctor availability schedules.' }
       ],
       contribution: [
-        { title: 'FULL-STACK DEVELOPMENT', desc: 'Contributed as a Full-Stack Developer on the core Web UI and REST API routes.' },
+        { title: 'FULL-STACK DEVELOPMENT', desc: 'Contributed as a Full-Stack Developer on core React dashboard components and Express API routes.' },
         { title: 'CORE FEATURES', desc: 'Built key patient registration and appointment scheduling workflows.' },
         { title: 'WORKFLOW INTEGRATION', desc: 'Structured digital prescription templates and doctor schedule models.' }
       ],
-      outcomeTitle: '1ST RUNNER-UP',
-      outcome: 'Awarded 1st Runner-Up in project competition for OPD workflow optimization.'
+      outcomeTitle: '1ST RUNNER-UP — AAYU-OPD',
+      outcome: 'Awarded 1st Runner-Up for AAYU-OPD in project competition for OPD hospital workflow optimization.'
     }
   },
   {
@@ -94,42 +94,42 @@ export const PROJECTS = [
     buildId: 'BUILD_003',
     name: 'CAMPUSCARE',
     category: 'REAL-TIME / SAFETY',
-    tagline: 'Real-time campus safety and emergency response platform.',
-    techStack: ['HTML', 'CSS', 'JavaScript', 'Firebase', 'Cloud Firestore', 'FCM', 'Firebase Auth'],
-    role: 'DEVELOPER',
+    tagline: 'Real-time campus safety and emergency response platform designed to connect students with campus authorities.',
+    techStack: ['HTML5', 'CSS3', 'JavaScript', 'Cloud Firestore', 'Firebase Auth', 'Cloud Functions', 'FCM', 'Vercel'],
+    role: 'Project Developer',
     team: 'Academic Project',
-    type: 'EXAMINATION PROJECT',
+    type: 'Examination Project',
     year: '2025',
     status: 'COMPLETED',
     caseStudy: {
-      heroStatement: 'Alert. Coordinate. Protect.',
+      heroStatement: 'Instant campus emergency SOS dispatch and real-time incident monitoring system.',
       whyHeader: 'WHY CAMPUSCARE?',
       overview: [
-        'CampusCare is a real-time campus safety alert and emergency response platform designed to help students report emergencies instantly and enable campus authorities to manage incidents.',
-        'Developed as a second-year examination project to demonstrate real-time incident notification and coordinate dispatch.'
+        'CampusCare is a real-time campus safety and emergency response platform built to help students report emergencies instantly and enable campus authorities to manage incidents efficiently.',
+        'Students on large academic campuses need a fast, location-aware way to trigger emergency alerts and notify campus security.'
       ],
       problem: 'On large academic campuses, delayed emergency reporting and lack of real-time location sharing during incidents slow down security response times.',
-      solution: 'CampusCare provides instant SOS triggers for students with location sharing and real-time emergency dashboard monitoring for campus authorities.',
+      solution: 'CampusCare provides instant SOS triggers with geolocation API coordinates, Firestore real-time synchronization, FCM push notifications, and a security monitoring dashboard.',
       features: [
         { name: 'INSTANT SOS ALERTS', desc: 'One-touch emergency alert trigger for students.' },
-        { name: 'REAL-TIME DASHBOARD', desc: 'Live incident monitoring map for campus security admins.' },
+        { name: 'LIVE LOCATION TRACKING', desc: 'Browser Geolocation API integration for sharing real-time coordinates.' },
         { name: 'PUSH NOTIFICATIONS', desc: 'Firebase Cloud Messaging (FCM) alerts sent to response teams.' },
-        { name: 'ROLE-BASED ACCESS', desc: 'Dedicated Student and Admin/Authority interfaces.' },
-        { name: 'LOCATION TRACKING', desc: 'Coordinate sharing during active SOS dispatch.' },
-        { name: 'INCIDENT MANAGEMENT', desc: 'Status tracking from alert trigger to resolution.' }
+        { name: 'REAL-TIME ADMIN DASHBOARD', desc: 'Live incident monitoring map for campus security admins.' },
+        { name: 'ROLE-BASED ACCESS', desc: 'Firebase Authentication for Student and Security Authority roles.' },
+        { name: 'INCIDENT MANAGEMENT', desc: 'Status tracking from emergency alert trigger to resolution.' }
       ],
       technology: [
-        { name: 'FRONTEND', desc: 'HTML, CSS, and Vanilla JavaScript for fast client-side loading.' },
-        { name: 'BACKEND SERVICES', desc: 'Firebase Authentication, Cloud Functions, and FCM.' },
-        { name: 'DATA & SERVICES', desc: 'Cloud Firestore for real-time alert synchronization.' }
+        { name: 'FRONTEND', desc: 'HTML5, CSS3, and JavaScript utilizing Geolocation APIs.' },
+        { name: 'BACKEND SERVICES', desc: 'Firebase Authentication, Cloud Functions for event triggers, and FCM.' },
+        { name: 'DATA & SERVICES', desc: 'Cloud Firestore for real-time alert synchronization and Vercel hosting.' }
       ],
       contribution: [
-        { title: 'APPLICATION ARCHITECTURE', desc: 'Designed and developed the application for a second-year examination project requirement.' },
+        { title: 'APPLICATION ARCHITECTURE', desc: 'Designed and developed CampusCare as a second-year examination project.' },
         { title: 'FIREBASE SERVICES', desc: 'Implemented Firebase Auth, Cloud Functions, and FCM push notifications.' },
-        { title: 'REAL-TIME DISPATCH', desc: 'Built Firestore real-time listeners for instant SOS alert updates.' }
+        { title: 'REAL-TIME DISPATCH', desc: 'Built Firestore real-time listeners for instant emergency SOS alert updates.' }
       ],
       outcomeTitle: 'SECOND-YEAR EXAMINATION PROJECT',
-      outcome: 'Successfully delivered as a second-year examination project demonstrating real-time emergency response system architecture.'
+      outcome: 'Successfully delivered as a second-year examination project demonstrating real-time emergency response architecture for campus safety.'
     }
   },
   {
@@ -138,20 +138,20 @@ export const PROJECTS = [
     num: '04',
     buildId: 'BUILD_004',
     name: 'BANQUET MANAGEMENT SYSTEM',
-    category: 'MANAGEMENT / FULL-STACK',
-    tagline: 'Full-stack banquet hall management platform for booking, event scheduling, catering coordination and billing management.',
+    category: 'FULL-STACK / BUSINESS APP',
+    tagline: 'Full-stack banquet hall management platform designed to manage the operational workflow of banquet and event venues.',
     techStack: ['React', 'Node.js', 'Express', 'MongoDB'],
-    role: 'FULL-STACK DEVELOPER',
+    role: 'Full-Stack Developer',
     team: 'Independent Project',
-    type: 'FULL-STACK WEB APP',
+    type: 'Full-Stack Web App',
     year: '2025',
     status: 'COMPLETED',
     caseStudy: {
-      heroStatement: 'Reserve. Schedule. Manage.',
+      heroStatement: 'Full-stack venue management for hall bookings, event scheduling, catering logistics, and automated billing.',
       whyHeader: 'WHY BANQUET MANAGEMENT?',
       overview: [
-        'Full-stack banquet hall management platform for managing banquet hall bookings, event scheduling, catering coordination and billing management.',
-        'Banquet and venue operators frequently struggle with booking conflicts, manual event scheduling, and disconnected catering/billing calculations.'
+        'A full-stack banquet hall management platform designed to manage the operational workflow of banquet and event venues.',
+        'Banquet hall operators frequently face double-booking conflicts, manual event scheduling, and disconnected catering/billing calculations.'
       ],
       problem: 'Banquet and venue operators face scheduling conflicts, manual reservation tracking, and uncoordinated catering logistics.',
       solution: 'A unified management dashboard consolidating hall availability calendars, catering packages, event timetables, and automated billing summaries.',
@@ -171,8 +171,19 @@ export const PROJECTS = [
         { title: 'BOOKING LOGIC', desc: 'Implemented venue booking availability checks and scheduling routines.' },
         { title: 'BILLING WORKFLOWS', desc: 'Developed invoice generation and event expense calculation features.' }
       ],
-      outcomeTitle: 'FULL-STACK MANAGEMENT PLATFORM',
-      outcome: 'Completed full-stack management web application streamlining banquet venue operations.'
+      outcomeTitle: 'FULL-STACK BUSINESS APPLICATION',
+      outcome: 'Completed full-stack management web application streamlining banquet venue operations and scheduling workflows.'
     }
+  }
+];
+
+export const EXPERIMENTS = [
+  {
+    id: 'stock-predictor',
+    title: 'AI-POWERED STOCK PREDICTOR',
+    event: 'Build & Grow AI Hackathon 2025',
+    type: 'Solo Hackathon Experiment',
+    description: 'Built during the Build & Grow AI Hackathon 2025 to explore machine learning and agentic AI beyond basic API calls. Developed a stock prediction model using TensorFlow trained on historical market data.',
+    techStack: ['Python', 'TensorFlow', 'Market Data APIs', 'Agentic AI'],
   }
 ];
