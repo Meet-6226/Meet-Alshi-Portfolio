@@ -137,7 +137,7 @@ export const PROJECTS = [
     slug: 'externship-manager',
     num: '04',
     buildId: 'BUILD_004',
-    name: 'EXTERNSHIP MANAGER',
+    name: 'BANQUET MANAGEMENT SYSTEM',
     category: 'MANAGEMENT / FULL-STACK',
     tagline: 'Full-stack venue and externship management platform designed to streamline booking, event scheduling, catering coordination and billing.',
     techStack: ['React', 'Node.js', 'Express', 'MongoDB'],
@@ -148,7 +148,7 @@ export const PROJECTS = [
     status: 'COMPLETED',
     caseStudy: {
       heroStatement: 'Full-stack management for venue bookings, event scheduling, catering logistics, and automated billing.',
-      whyHeader: 'WHY EXTERNSHIP MANAGER?',
+      whyHeader: 'WHY BANQUET MANAGEMENT SYSTEM?',
       overview: [
         'A full-stack venue and externship management platform designed to manage the operational workflow of banquet and event venues.',
         'Venue operators frequently face double-booking conflicts, manual event scheduling, and disconnected catering/billing calculations.'
