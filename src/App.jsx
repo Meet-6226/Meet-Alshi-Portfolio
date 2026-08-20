@@ -84,6 +84,14 @@ function App() {
   };
 
   const handleSectionNavigation = (sectionId) => {
+    if (sectionId === 'resume' || sectionId === '/resume') {
+      setIsResumeView(true);
+      setActiveProjectSlug(null);
+      window.history.pushState(null, '', '#/resume');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     setIsResumeView(false);
     setActiveProjectSlug(null);
     window.history.pushState(null, '', sectionId ? `#${sectionId}` : '#');
